@@ -36,6 +36,7 @@ install with GNUstow*
   - GTK Theme: [Arc Dark](https://github.com/horst3180/arc-theme)
   - Icons: [Xenlism Wildfire](http://xenlism.github.io/wildfire/)
   - Cursor: [Breeze Hacked](https://www.gnome-look.org/content/show.php/Breeze+Serie?content=169316)
+- Notifier is [Dunst](https://github.com/knopwob/dunst)
 - Firefox is installed with the following add-ons:
   - Stylish
     - [ Twily's Powerline Firefox CSS ]( https://userstyles.org/styles/102262/twily-s-powerline-firefox-css )
