@@ -1,0 +1,8 @@
+" scrolling only one line at a time with j/k is mindnumbing
+noremap j 3j
+noremap k 3k
+
+" allow ublock origin popup to show in liberator bar
+" alternative fix is go to about:config and set
+" extensions.ublock0.forceLegacyToolbarButton to true
+style -name ublick * #nav-bar * { visibility: visible; }
