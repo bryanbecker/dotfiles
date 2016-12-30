@@ -1,0 +1,248 @@
+set nocompatible	" extra features of vim
+filetype off		" required for vundle
+
+"Vim requires POSIX-Compliant Shell.  Fish is not
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/sh
+endif
+
+" allows sharing clipboard with X
+"set clipboard=unnamed " (uses * register, PRIMARY, on select)
+"set clipboard=unnamedplus " (uses + register, CLIPBOARD, ctrl+c)
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" use cmake instead of make
+set makeprg=cmake
+
+" sets the area at bottom to be higher to suppress many "Press Enter to
+" continue
+"set cmdheight=2
+set shortmess=a
+
+
+set rtp+=~/.vim/bundle/Vundle.vim
+"set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+
+call vundle#begin()
+
+" required
+Plugin 'gmarik/Vundle.vim'
+
+" My bundles
+"Plugin 'https://raw.githubusercontent.com/t3chnoboy/dotfiles/OSX/.vim/colors/anotherdark2.vim'
+
+" Github Plugins
+
+" vim wiki
+" Plugin 'vimwiki/vimwiki.git'
+" nginx
+"Plugin 'nginx/nginx', {'rtp': 'contrib/vim/'}
+"
+Plugin 'rizzatti/dash.vim'
+" sudoedit
+Plugin 'chrisbra/SudoEdit.vim'
+" airline
+"Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" powerline
+" Plugin 'Lokaltog/powerline'
+" fish scripts
+Plugin 'dag/vim-fish'
+" ledger-CLI support
+Plugin 'ledger/vim-ledger'
+" color css
+Plugin 'ap/vim-css-color'
+" rainbow
+"Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+" tagbar (works with ctags)
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+"vim-sleuth?
+" fugitive - for git
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+" snipmate (consider removing this)
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+" optional snipmate files
+"Plugin 'honza/vim-snipmate'
+" easy motion -- helps makes jumping around easier
+Plugin 'Lokaltog/vim-easymotion'
+" vim surround
+Plugin 'tpope/vim-surround'
+" vim commentary -- use gcc to comment out a line or gc<motion>
+"Plugin 'tpope/vim-commentary'
+" syntastic -- error checking
+"Plugin 'scrooloose/syntastic'
+" add color to css colors
+" Plugin 'ap/vim-css-color'  "doesn't work for rgb which ruins it
+" Undor Tree -- full visual representation of undos
+Plugin 'mbbill/undotree'
+
+" Autocompletions for c++ and others
+Plugin 'Valloric/YouCompleteMe'
+" Helps with using CMake from any directory
+Plugin 'vhdirk/vim-cmake'
+" Adds header guards for cpp files
+Plugin 'drmikehenry/vim-headerguard'
+
+" Highlighting and lang specific bundles
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-liquid'
+"Plugin 'scottmcginness/vim-jquery'
+Plugin 'kchmck/vim-coffee-script'
+
+" Elixir and Phoenix stuff
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattreduce/vim-mix'
+Plugin 'avdgaag/vim-phoenix'
+
+" Rust stuff
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'cespare/vim-toml'
+
+" Node stuff
+Plugin 'moll/vim-node'
+Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'marijnh/tern_for_vim'
+"Plugin 'digitaltoad/vim-jade'
+"Plugin 'wavded/vim-stylus'
+"Plugin 'juvenn/mustache.vim'
+Plugin 'burnettk/vim-angular'
+Plugin 'leafgarland/typescript-vim'
+
+" Colors
+Plugin 'guns/xterm-color-table.vim'
+
+" Haskell
+Plugin 'raichoo/haskell-vim' " indendation
+Plugin 'jpalardy/vim-slime' " pipe text to screen (not just haskell)
+Plugin 'wting/lhaskell.vim' " support for literate haskell
+Plugin 'eagletmt/neco-ghc'  " autocompletion
+Plugin 'enomsg/vim-haskellConcealPlus'
+Plugin 'Twinside/vim-hoogle' " :help hoogle
+
+" automatically close the preview window when move cursor on autocomplete
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+call vundle#end()
+
+"au FileType javascript call JavaScriptFold()
+syntax enable
+filetype plugin indent on " required
+set shiftwidth=2      " indentation is 2 spaces
+set tabstop=2         " tab is worth 2 spaces
+set expandtab         " tabs are really spaces
+set scrolloff=10      " stop scrolling when we're 15 lines away from margin
+"set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set listchars=nbsp:+,extends:»,tab:▸\ ,trail:›
+set list              " show invisible characters
+set encoding=utf-8
+set fileencoding=utf-8
+set number      " line numbers
+set cursorline  " highlights current line
+set cursorcolumn
+set visualbell  " no sounds
+set ignorecase  " search ignores case
+set smartcase   " unless i include upercase in search
+set incsearch   " vim searches as i type
+
+" settings for solarized
+if has ('gui_running')
+  "set background=light
+  set background=dark
+  set lines=70
+  set columns=105
+  set transparency=10
+  set go-=T " remove top toolbar (not sure if needed)
+  " set go+=Te " add top toolbar
+  set go-=L " hide left scroll bar
+  set go-=r " hide right scrool bar
+  "let g:solarized_termtrans = 0.85
+else
+  set background=dark
+  let g:solarized_termtrans = 1
+endif
+" set term=screen-256color
+set t_Co=256
+colorscheme anotherdark2
+"colorscheme solarized
+let g:solarized_visibility='high' " choose between normal high and low
+let g:solarized_contrast = 'high'
+"let g:solarized_visibility='low' " choose between normal high and low
+
+" settings for Powerline
+
+let g:minBufExplForceSyntaxEnable = 1
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
+set laststatus=2 " always display the statusline in all windows
+set noshowmode "Hide the default mode text (e.g. -- INSERT -- below the statusline)
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+"hi CursorLine cterm=NONE ctermbg=235
+hi CursorLine cterm=NONE ctermbg=238
+"hi CursorColumn cterm=NONE ctermbg=
+set cursorline
+set colorcolumn=80
+hi ColorColumn ctermbg=235
+
+"settings for ledger
+"auto recognize extensions as ledger files
+au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
+
+"enable rust autoformat
+let g:rustfmt_autosave = 1
+
+" settings for ycm
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_always_populate_location_list = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_extra_conf_globlist = ['~/code/*']
+let g:ycm_warning_symbol = 'W>'
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" disable all auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" disable auto-comment on c,cpp unless block comment
+au FileType c,cpp,h,hpp setlocal comments-=:// comments+=f://
+
+" fix commenting on xresources files
+autocmd FileType xdefaults set commentstring=!\ %s
+
+if has("mouse")
+  set mouse=a
+  set ttyfast
+  set ttymouse=xterm2
+endif
