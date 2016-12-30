@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# keyboard stuff (maybe put in .profile?)
+# setxkbmap -option ctrl:swapcaps
+# xcape -e 'Control_L=Escape'
+
+export XPROFILE_LOADED="yes"
