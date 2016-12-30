@@ -1,0 +1,7 @@
+--format bestaudio
+--extract-audio
+--audio-format "mp3""
+--audio-quality 0
+--postprocessor-args "-strict experimental"
+--output "~/Music/airlock/youtube/%(title)s.%(ext)s"
+--no-check-certificates
