@@ -1,0 +1,94 @@
+"resource/layout/overlaydesktop_lores.layout" {
+	styles {
+		sidemenu {
+			textcolor=blue
+			font-size=15
+font-size=14 [$LINUX]
+		}
+			sidemenu:hover {
+				textcolor=lightestBlue
+				font-size=15
+font-size=14 [$LINUX]
+			}
+		topbar {
+			textcolor=white
+			font-family=headerfont
+			font-size=48
+		}
+		clocksuffix {
+			textcolor=white
+			font-family=headerfont
+			font-size=48
+		}
+		timeStrings {
+			textcolor=white
+		}
+	}
+	layout {
+		region {
+			name=overlay
+			align=top-center
+			width=1000
+			margin-left=10
+			margin-top=10
+			margin-right=10
+			margin-bottom=10
+		}
+		region {
+			name="detailpanels"
+			region=overlay
+			align=bottom
+			width=max
+			height=210
+			margin-bottom=100
+		}
+		region {
+			name="taskbar"
+			region=overlay
+			align=bottom
+			width="max"
+			height=75
+		}
+		region {
+			name="topbar"
+			region=overlay
+			width="max"
+			height=50
+			margin-right=60
+		}
+		place {
+			controls="BroadcastDetailPanel"
+			region=detailpanels
+			width=250
+			height=240
+			spacing=10
+		}
+		place {
+			controls="GameHubButton,GameGroupsButton,ChatRoomButton,DLCButton,GuideButton,GuidesButton,LegacyCDKeyButton,WebSiteButton,ForumsButton,RecommendButton,WorkshopButton,FriendsButton,PlayersButton,AchievementsButton,ScreenshotsButton"
+			region=overlay
+			align=left
+			y=100
+			dir=down
+			spacing=10
+		}
+
+		place {
+			control=clock,clocksuffix
+			region=topbar
+			align=top-center
+			y=56
+		}
+		place {
+			control="SessionText,TwoWeeksText,ForeverText"
+			y=45
+			x=10
+			dir=down
+		}
+		place {
+			control="CloseButton"
+			region=overlay
+			y=35
+			dir=down
+		}
+	}
+}

@@ -1,0 +1,18 @@
+"resource/layout/steamrootdialog_musicpage_details.layout" {
+	styles {
+		CMusicPage_Details {
+			bgcolor=custombackgroundprimary
+			
+			render {}
+			render_bg {}
+		}
+	}
+
+	layout {
+		place {
+			control=CMusicPage_Details_Content
+			width=max
+			height=max
+		}
+	}
+}

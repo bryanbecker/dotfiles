@@ -1,7 +1,3 @@
-# ignore all of steam except for skins
-/steam/**
-!/steam/.steam/skins
-
 # Created by https://www.gitignore.io/api/dotfiles,emacs,vim,linux,osx
 
 ### Emacs ###

@@ -1,0 +1,127 @@
+"resource/layout/joingamedialogexpanded.layout" {
+	styles {
+		label {
+			textcolor=white
+			font-size=18
+		}
+
+		frame {
+			bgcolor=darkestGrey
+			minimum-width=498
+			minimum-height=273
+			render_bg {
+				0="image(x0, y0+26, x1, y1, graphics/dialogs/gameLaunch)"
+			}
+		}
+	}
+
+	layout {
+		region {
+			name=box
+			width=max
+			height=max
+			margin-left=20
+			margin-top=20
+			margin-right=20
+			margin-bottom=20
+		}
+
+		region {
+			name=ssa
+			width=max
+			height=max
+			margin-left=20
+			margin-top=215
+			margin-right=20
+		}
+
+		place {
+			controls="InfoLabel"
+			region=box
+			align=left
+			width=320
+			margin-left=150
+			margin-top=35
+			dir=down
+		}
+
+		place {
+			controls="ThrobberThrobberThrobber"
+			width=0
+			height=0
+		}
+
+		place {
+			controls="ReadyToPlayInfoLabel,ReadyToPlayTimeLabel"
+			region=box
+			start=InfoLabel
+			width=max
+			margin-top=10
+			dir=down
+			spacing=8
+		}
+
+		place {
+			controls="Progress"
+			region=box
+			start=ReadyToPlayTimeLabel
+			width=max
+			margin-top=10
+			dir=down
+		}
+
+		place {
+			controls="OverrideThrottleCheckBox"
+			region=box
+			start=Progress
+			y=10
+			width=max
+			dir=down
+		}
+
+		place {
+			controls="AutoLaunchCheckBox"
+			region=box
+			start=OverrideThrottleCheckBox
+			width=max
+			margin-top=10
+			dir=down
+		}
+
+		region {
+			name=bottom
+			align=bottom
+			width=max
+			height=51
+		}
+
+		place {
+			controls="NewsButton,PlayButton"
+			region=bottom
+			align=right
+			width=135
+			height=28
+			margin-top=12
+			margin-right=12
+			spacing=8
+		}
+		place {
+			controls="SkipUpdateLabel"
+			region=box
+			start=AutoLaunchCheckBox
+			width=max
+			margin-top=46
+			margin-right=145
+			dir=down
+		}
+
+		place {
+			controls="Divider,SSAUpdateLabel,SSAUpdateURL"
+			region=ssa
+			width=max
+			margin-top=10
+			dir=down
+			spacing=5
+		}
+	}
+}

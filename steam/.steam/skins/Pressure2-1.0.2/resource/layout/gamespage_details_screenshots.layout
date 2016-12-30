@@ -1,0 +1,46 @@
+"resource/layout/gamespage_details_screenshots.layout" {
+	colors {
+		GameDetailsScreenshots.ExtraVerticalSpacing = "125"
+		RichText.InsetX = "0"
+		RichText.InsetY = "3" 
+	}
+
+	styles {
+		screenshotsdetails { 
+			render_bg {
+				1="fill(x0-20,y0-15,x1,y0-14, dividers_onLightBG)"
+			}
+		}
+	}
+
+	layout {
+		region {
+			name=body
+			width=max
+			height=max
+			margin=8
+		}
+
+		place {
+			control=headerlabel
+			region=body
+			width=max
+		}
+		
+		place {
+			control=screenshotsarea
+			region=body
+			dir=down
+			y=48
+			width=max
+		}
+
+		place {
+			control=viewall
+			region=body
+			align=bottom
+			height=34
+			margin-bottom=5
+		}
+	}
+}

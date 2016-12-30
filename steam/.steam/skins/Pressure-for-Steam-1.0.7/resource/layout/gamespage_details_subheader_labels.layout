@@ -1,0 +1,77 @@
+"resource/layout/gamespage_details_subheader_labels.layout" {
+	styles {
+		headertext {
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
+		}
+		headertext-red {
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
+		}
+		headertext-green {
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
+		}
+		headertext-blue {
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
+		}
+		valuetext {
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
+		}
+	}
+
+	layout {
+		region {
+			name="subheaderlabels"
+			align=left
+			x=0
+			y=0
+		}
+		place {
+			control=totalplaytimeheader
+			region=subheaderlabels
+			x=0
+			y=0
+		}
+
+		place {
+			control=totalplaytimevalue
+			start=totalplaytimeheader
+			x=6
+			dir=right
+		}
+
+		place {
+			control=gameplayedheader
+			start=totalplaytimeheader
+			dir=down
+		}
+
+		place {
+			control=gameplayedvalue
+			start=gameplayedheader
+			dir=right
+			x=6
+		}
+
+		place {
+			control=streamheader
+			start=gameplayedheader
+			dir=down
+		}
+
+		place {
+			control=streamvalue
+			start=streamheader
+			x=6
+			dir=right
+		}
+	}
+}

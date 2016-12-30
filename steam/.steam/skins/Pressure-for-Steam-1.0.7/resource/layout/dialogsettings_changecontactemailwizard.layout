@@ -1,0 +1,25 @@
+"resource/layout/dialogsettings_changecontactemailwizard.layout" {
+	controls {}
+
+	styles {}
+
+	layout {
+		region {
+			name=bottom
+			align=bottom
+			width=max
+			height=51
+		}
+
+		place {
+			control="PrevButton,NextButton,CancelButton,FinishButton"
+			height=28
+			width=90
+			region=bottom
+			align=right
+			margin-top=12
+			margin-right=12
+			spacing=8
+		}
+	}
+}

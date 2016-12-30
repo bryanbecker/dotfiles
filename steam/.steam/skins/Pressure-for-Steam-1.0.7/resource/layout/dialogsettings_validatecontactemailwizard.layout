@@ -1,0 +1,24 @@
+"resource/layout/dialogsettings_validatecontactemailwizard.layout" {
+	controls {}
+
+	styles {}
+
+	layout {
+		region {
+			name=bottom
+			align=bottom
+			height=51
+			width=max
+		}
+
+		place {
+			control="PrevButton,NextButton,CancelButton"
+			region=bottom
+			align=right
+			height=24
+			margin-top=14
+			margin-right=14
+			spacing=8
+		}
+	}
+}

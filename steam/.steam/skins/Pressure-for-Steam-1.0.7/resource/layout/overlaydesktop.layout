@@ -1,0 +1,142 @@
+"resource/layout/overlaydesktop.layout" {
+	styles {
+		sidemenu {
+			textcolor=texthover
+			font-size=15
+font-size=14 [$LINUX]
+		}
+			sidemenu:hover {
+				textcolor=text
+				font-size=15
+font-size=14 [$LINUX]
+			}
+		topbar {
+			textcolor=white
+			font-family=headerfont
+			font-size=48
+			render_bg {}
+		}
+		clocksuffix {
+			textcolor=white
+			font-family=headerfont
+			font-size=48
+			render_bg {}
+		}
+		timeStrings {
+			textcolor=lightestGrey
+			font-size=15
+			font-size=14 [$LINUX]
+			font-family=basefont
+		}
+	}
+	layout {
+		region {
+			name=overlay
+			align=top-center
+			width=max
+			margin-top=10
+			margin-bottom=10
+		}
+		// Keeps all the top areas horizontally aligned
+		region {
+			name="topbar"
+			align=left
+			width=max
+			height=26
+			x=15
+			y=74
+			margin-right=85
+		}
+		region {
+			name="taskbar"
+			region=overlay
+			align=bottom
+			width="max"
+			height=145
+		}
+		region {
+			name=bottom
+			align=bottom
+			width=max
+			height=145
+		}
+		place {
+			control="SessionText"
+			x=17
+			y=47
+		}
+		place {
+			control=TwoWeeksText,ForeverText
+			start=SessionText
+			x=20
+			dir=right
+			spacing=20
+		}
+		place {
+			control=BroadcastDetailPanel
+			start=ForeverText
+			x=14
+			width=250
+			dir=right
+			y=-5
+		}
+		place {
+			control="Clock,ClockSuffix"
+			region=taskbar
+			align=right
+			y=59
+			margin-right=175
+			dir=right
+		}
+		place {
+			control=FriendsDetailPanel
+			region=topbar
+			align=left
+			width=305
+			height=26
+			dir=right
+		}
+		place {
+			control=CommunityHubDetailPanel
+			start=FriendsDetailPanel
+			x=16
+			width=220
+			height=26
+		}
+		place {
+			control=GuidesDetailPanel
+			start=CommunityHubDetailPanel
+			x=16
+			width=141
+			height=26
+		}
+		place {
+			control=CommunityDiscussionsDetailPanel
+			start=GuidesDetailPanel
+			x=16
+			width=180
+			height=26
+		}
+		place {
+			control=ScreenshotsDetailPanel
+			start=CommunityDiscussionsDetailPanel
+			x=16
+			width=240
+			height=26
+		}
+		place {
+			controls="AchievementsDetailPanel"
+			region=bottom
+			align=left
+			width=800
+			height=145
+			margin-left=0
+			spacing=10
+		}
+		place {
+			controls="GameGroupsButton,ChatRoomButton,DLCButton,GuideButton,LegacyCDKeyButton,WebSiteButton,RecommendButton,WorkshopButton,NewsDetailPanel"
+			width=0
+			height=0
+		}
+	}
+}

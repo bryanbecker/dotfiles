@@ -1,0 +1,196 @@
+"resource/layout/subpaneloptionsdownloads.layout" {
+	styles {
+		highlight {
+			textcolor=secondaryText_onLightBG
+		}
+
+		label {
+			textcolor=secondaryText_onLightBG
+		}
+
+		CSubPanelOptionsDownloads {
+			render_bg {
+				0="image(x0+26,y0+17,x1,y1, graphics/icons/settings/libraries)"
+				1="image(x0+26,y0+109,x1,y1, graphics/icons/settings/webbrowser)"
+				2="image(x0+26,y0+191,x1,y1, graphics/icons/settings/downloads)"
+			}
+		}
+	}
+
+	layout {
+		place {
+			control=ManageInstalledappsLabel,RegionInfoLabel,AllowDownloadsDuringGameplayInfo,ThrottleDownloadsWhileStreamingInfo,RestrictionsLabel
+			height=0
+		}
+
+		region {
+			name=contentlibrary
+			x=82
+			y=0
+			width=max
+			height=114
+			margin-right=29
+		}
+
+		place {
+			control=LibrariesLabel
+			region=contentlibrary
+			dir=down
+			y=28
+			spacing=2
+		}
+
+		place {
+			control=ManageInstalledApps
+			start=LibrariesLabel
+			dir=down
+			y=4
+			width=350
+			height=34
+		}
+
+		place {
+			control=Divider1
+			align=left
+			x=71
+			y=90
+			width=max
+			height=1
+		}
+
+		region {
+			name=regions
+			x=82
+			y=82
+			width=max
+			height=114
+			margin-right=29
+		}
+
+		place {
+			control=RegionLabel
+			region=regions
+			dir=down
+			y=28
+			spacing=2
+		}
+
+		place {
+			control=DownloadRegionCombo
+			start=RegionLabel
+			dir=down
+			y=4
+			width=350
+			height=34
+		}
+
+		place {
+			control=Divider2
+			align=left
+			x=71
+			y=172
+			width=max
+			height=1
+		}
+
+		region {
+			name=restrictions
+			x=82
+			y=163
+			height=114
+			width=max
+			margin-right=29
+		}
+
+		place {
+			control=ThrottleRatesLabel
+			region=restrictions
+			dir=down
+			y=28
+		}
+
+		place {
+			control=ThrottleRates
+			start=ThrottleRatesLabel
+			dir=down
+			y=4
+			width=350
+			height=34
+		}
+
+		place {
+			control=AutoUpdateTimeRestrictCheckbox
+			start=ThrottleRates
+			dir=down
+			y=8
+			height=18
+		}
+
+		place {
+			control=AutoUpdateTimeRestrictStartLabel
+			start=AutoUpdateTimeRestrictCheckbox
+			dir=down
+			y=8
+			width=170
+		}
+
+		place {
+			control=AutoUpdateTimeRestrictStart
+			start=AutoUpdateTimeRestrictStartLabel
+			dir=down
+			y=4
+			width=170
+			height=34
+		}
+
+		place {
+			control=AutoUpdateTimeRestrictEndLabel
+			start=AutoUpdateTimeRestrictStartLabel
+			dir=right
+			x=10
+			width=170
+		}
+
+		place {
+			control=AutoUpdateTimeRestrictEnd
+			start=AutoUpdateTimeRestrictEndLabel
+			dir=down
+			y=4
+			width=170
+			height=34
+		}
+
+		place {
+			control=AllowDownloadsDuringGameplayCheckbox,ThrottleDownloadsWhileStreamingCheckbox,DownloadRatesInBitsCheckbox
+			start=AutoUpdateTimeRestrictStart
+			dir=down
+			y=8
+			height=18
+			spacing=6
+		}
+		place {
+			control=Divider3
+			align=left
+			x=71
+			y=420
+			width=max
+			height=1
+		}
+		place {
+			control=FlushDownloadConfig
+			start=Divider3
+			dir=down
+			y=4
+			width=350
+			height=35
+		}
+		place {
+			control=FlushDownloadConfigLabel
+			start=FlushDownloadConfig
+			dir=down
+			y=4
+			height=18
+		}
+
+	}
+}

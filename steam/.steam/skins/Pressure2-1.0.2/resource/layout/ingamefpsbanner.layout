@@ -1,0 +1,47 @@
+"resource/layout/ingamefpsbanner.layout" {
+	styles {
+		CounterTextSmall {
+			font-size=15
+			font-size=16 [$OSX]
+		}
+		
+		CounterTextMedium {
+			font-size=16
+			font-size=17 [$OSX]
+		}
+		
+		CounterTextLarge {
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		HighContrast {
+			bgcolor=secondaryText_OnLightBG
+			textcolor=lightgreenA400
+			padding-left=4
+			padding-top=4
+			padding-right=4			
+			padding-bottom=4
+			minimum-width=60
+			minimum-height=20
+		}
+	  
+		LowContrast {
+			textcolor=text_onDarkBG
+			padding-left=4
+			padding-top=4
+			padding-right=4			
+			padding-bottom=4
+			minimum-width=60
+			minimum-height=20
+		}
+	}
+	
+	layout {
+		place {
+			control=TextLabel
+			align=center
+			margin=4
+		}
+	}
+}

@@ -1,0 +1,43 @@
+"resource/layout/subpaneloptionscloud.layout" {
+	styles {
+		CSubPanelOptionsCloud {
+			render_bg {
+				0="image(x0+26,y0+27,x1,y1, graphics/icons/settings/server)"
+			}
+		}
+
+		label {
+			textcolor=secondaryText_onLightBG
+		}
+	}
+	
+	layout {
+		region {
+			name=cloud
+			x=82
+			y=0
+			width=max
+			height=max
+			margin-right=29
+		}
+
+		place {
+			control=SteamCloudInfo
+			region=cloud
+			dir=down
+			y=28
+			width=max
+			spacing=2
+		}
+
+		place {
+			control=EnableCloudCheck,EnableScreenshotsCheck
+			start=SteamCloudInfo
+			dir=down
+			y=6
+			width=max
+			height=18
+			spacing=10
+		}
+	}
+}

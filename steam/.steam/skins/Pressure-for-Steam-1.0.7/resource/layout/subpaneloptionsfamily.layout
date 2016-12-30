@@ -1,0 +1,69 @@
+"resource/layout/subpaneloptionscloud.layout" {
+	layout {
+		place {
+			controls="FamilySharingInfoText"
+			x=18
+			y=21
+			width=max
+			margin-right=43
+			dir=down
+		}
+
+		place {
+			controls="AuthorizedDeviceCheck,ManageSharingLabel"
+			start=FamilySharingInfoText
+			y=8
+			width=340
+			height=28
+			dir=down
+			spacing=8
+		}
+
+		place {
+			controls="BorrowersList"
+			start=ManageSharingLabel
+			y=16
+			width=max
+			height=140
+			margin-right=43
+			dir=down
+		}
+
+		place {
+			controls="ShowNotificationsCheck"
+			start=BorrowersList
+			y=8
+			dir=down
+		}
+		place {
+			control="Divider1"
+			start=ShowNotificationsCheck
+			y=16
+			width=max
+			margin-right=43
+			dir=down
+		}
+		place {
+			controls="FamilyOptionsText"
+			start=Divider1
+			y=16
+			width=max
+			margin-right=43
+			dir=down
+		}
+
+		place {
+			controls="ManageOptionsLabel"
+			start=FamilyOptionsText
+			y=8
+			width=340
+			height=28
+			dir=down
+		}
+		place {
+			control="FamilySharingTitle,FamilyOptionsTitle,BorrowersLabel"
+			width=0
+			height=0
+		}
+	}
+}

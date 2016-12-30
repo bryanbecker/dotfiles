@@ -1,0 +1,34 @@
+"resource/layout/musicpage_details_playlistitem.layout" {
+	styles {
+		PositionLabelStyle {}
+		
+		TrackLabelStyle { 
+			textcolor=secondarytext_onLightBG
+			font-family=mediumfont	
+			font-size=19
+			font-size=20 [$OSX]
+			padding-top=15
+			padding-right=24
+			padding-bottom=15
+			inset-left=24
+		}
+		
+			TrackLabelStyle:hover {
+				bgcolor=dividers_onLightBG
+				textcolor=text_onLightBG
+			}
+	}
+	
+	
+	layout {
+		place {
+			control=PositionLabel
+			height=0
+		}
+
+		place {
+			control=TrackLabel
+			width=max
+		}
+	}
+}

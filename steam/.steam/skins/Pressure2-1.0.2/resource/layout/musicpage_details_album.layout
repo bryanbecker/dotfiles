@@ -1,0 +1,134 @@
+"resource/layout/musicpage_details_album.layout" {
+	styles {
+		AdditionalActionButtonStyle {}
+		TrackStyle {}
+
+		CMusicPage_Details_Album {
+			bgcolor=none
+
+			render {}
+			render_bg {}
+		}
+		
+		AlbumTitleStyle {
+			textcolor=text_onLightBG
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+
+		ArtistStyle {
+			textcolor=secondaryText_onLightBG
+			font-size=24
+			font-size=25 [$OSX]
+		}
+		
+		TracksInfoStyle {
+			textcolor=secondaryText_onLightBG
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		CoverStyle {
+			render_bg {
+				-1="fill(x0,y1-1,x1+9999,y1, dividers_onLightBG)"
+				0="image(x0,y0,x1,y1, graphics/music_placeholder)"
+			}
+		}
+		
+		ActionButtonStyle {
+			bgcolor=none
+			textcolor=none
+			font-size=0
+			minimum-width=48
+			minimum-height=48
+			
+			render {}
+			render_bg {				
+				0="image(x0, y0, x1, y1, graphics/icons/playalbum/standard/playalbum)"
+			}	
+		}
+
+			ActionButtonStyle:hover { 
+				render_bg {				
+					0="image(x0, y0, x1, y1, graphics/icons/playalbum/hover/playalbum)"
+				}	
+			}
+
+			ActionButtonStyle:active { 
+				render_bg {				
+					0="image(x0, y0, x1, y1, graphics/icons/playalbum/active/playalbum)"
+				}	
+			}
+	}
+
+	layout {
+		place {
+			control=ShowAlbumButton
+			height=0
+		}
+		
+		region {
+			name=bodyregion
+			width=max
+			height=max
+			overflow=scroll-vertical
+		}
+		
+		place {
+			control=CoverImage
+			region=bodyregion
+			x=0
+			y=0
+			width=300
+			height=300
+		}
+
+		place {
+			control=AlbumTitleLabel
+			region=bodyregion
+			start=CoverImage
+			x=24
+			y=18
+			margin-right=24
+			width=max
+		}
+		
+		place {
+			control=ArtistLabel,TracksInfoLabel
+			region=bodyregion
+			start=AlbumTitleLabel
+			dir=down
+		}
+
+		place {
+			control=PlayTracksButton
+			region=bodyregion
+			start=TracksInfoLabel
+			dir=down
+			width=48
+			height=48
+		}
+
+		place {
+			control=AddTracksToQueueButton,AddTracksToPlaylistButton,PlayAlbumButton,AddAlbumToQueueButton,AddAlbumToPlaylistButton,ShowAlbumInSystemButton
+			region=bodyregion
+			start=PlayTracksButton
+			dir=down
+			y=18
+			height=34
+			spacing=4
+		}
+
+		place {
+			control=*MusicPageDetailsTrack
+			region=bodyregion
+			start=CoverImage
+			dir=down
+			y=24
+			width=max
+			height=40
+			spacing=10
+		}
+	}
+}

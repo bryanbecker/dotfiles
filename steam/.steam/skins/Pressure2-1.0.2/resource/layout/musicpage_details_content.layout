@@ -1,0 +1,169 @@
+"resource/layout/musicpage_detail_content.layout" {
+	styles {
+		DetailsBorderPanel {}
+		BackgroundImage {}
+
+		DetailsBorderPanel {
+			render_bg {}
+		}
+		
+		AlbumOrArtistListStyle {
+			bgcolor=custombackgroundprimary
+			font-size=16
+			font-size=17 [$OSX]
+			padding-left=4
+			padding-right=25
+			inset="0 0 0 0"
+		}
+		
+		EmptyDatabaseText {
+			textcolor=disabled_onLightBG
+			font-size=15
+			font-size=16 [$OSX]
+		}
+		
+		CrawlingText {
+			textcolor=disabled_onLightBG
+			font-size=15
+			font-size=16 [$OSX]
+		}
+		
+		CMusicPage_Details_Content {
+			render {}
+			render_bg {}
+		}
+		
+		"MusicPage_Details_Content ListPanel" {
+			font-size=15
+			font-size=16 [$OSX]		
+			padding-left=4
+			padding-right=2
+			inset="0 0 -1 0"
+
+			render {}
+			render_bg {}
+		}
+
+		
+		"MusicPage_Details_Content ListPanelInterior" {
+			inset="0 0 -1 0"
+
+			render {}
+			render_bg {
+				0="fill(x1-1,y0,x1,y1, dividers_onLightBG)"
+			} 
+		}
+		
+		"MusicPage_Details_Content ListPanelInterior:scrollbar" {
+			bgcolor=none
+			inset="0 0 -1 0"
+			
+			render_bg {}
+		}
+		
+		"MusicPage_Details_Content ListPanelDragger" {
+			bgcolor=none
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {}
+		}
+
+		"MusicPage_Details_Content ListPanelColumnHeader" {
+			bgcolor=none
+			font-size=14
+			font-size=15 [$OSX]
+			inset="0 0 0 0"
+
+			render {}
+			render_bg  {}
+		}
+
+		"AlbumOrArtistListStyle ListPanelColumnSelectButton" {
+	   		inset="-3 3 0 0"
+
+			render {
+	  			5="image( x0 + 3, y0 + 3, x1, y1, graphics/icon_collapse )"
+			}   
+			render_bg {
+				1="fill( x0 + 1, y0, x1 - 1, y1, orange500 )"
+			}
+		}
+		
+		"ListPanel RichText" {
+			textcolor=disabled_onLightBG
+			font-size=15
+			font-size=16 [$OSX]
+		}
+	}
+
+	layout {
+		place {
+			control=background,BackgroundImageA,BackgroundImageB,BackgroundImageMask
+			height=0
+		}
+
+		region	{
+			name=list
+			width=306
+			height=max
+		}
+
+		region {
+			name=details
+			dir=down
+			x=306
+			width=max
+			height=max
+			overflow=scroll-vertical
+		}
+		
+		place {
+			control=EmptyDatabaseText
+			x=0
+			y=0
+			width=max
+			height=max
+			margin=10
+		}
+
+		place {
+			control=CrawlingText
+			x=0
+			y=0
+			width=max
+			height=max
+			margin=10
+		}
+		
+		place {
+			control=DetailsBorder
+			width=max
+			height=max
+			margin=-2
+		}
+
+		place {
+			control=AlbumList,ArtistList,PlaylistList
+			width=306
+			height=max
+			margin-top=-1
+		}
+
+		place {
+			control=*MusicPageDetailsAlbum
+			region=details
+			width=max
+			dir=down
+			spacing=10
+		}
+
+		place {
+			control=*MusicPageDetailsPlaylist
+			region=details
+			dir=down
+			width=max
+			spacing=10
+		}
+	}
+}

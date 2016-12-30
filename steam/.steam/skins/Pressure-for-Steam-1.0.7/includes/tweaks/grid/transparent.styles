@@ -1,0 +1,13 @@
+"transparent.styles" {
+	styles {
+		"GameItem_Uninstalled GGPlaceholderBG" {
+			alpha 75
+		}
+		"GameItem_Uninstalled GamesGridImage" {
+			alpha 75
+		}
+		"GameItem_Uninstalled GamesGridIcon" {
+			alpha 75
+		}
+	}
+}

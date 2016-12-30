@@ -1,0 +1,303 @@
+"resource/layout/gamespage_details_subheader.layout" {
+	colors {
+		GameDetailsSubHeader.HorizontalSpacing = "10"
+		GameDetailsSubHeader.VerticalMargin = "10"
+	}
+	
+	styles {
+		CDetailsGameSubHeaderPanel {}
+		
+		ClientListButton {
+			inset="-40 0 0 0"
+
+			render {
+				0="image(x0+10, y0+22, x1, y1, graphics/icons/menu/standard/menu)"
+			}
+			render_bg {}			
+		}
+		
+			ClientListButton:hover {
+				render {
+					0="image(x0+10, y0+22, x1, y1, graphics/icons/menu/hover/menu)"
+				}
+			}
+			
+			ClientListButton:active {
+				render_bg{
+					-3="image(x0-7,y0+11,x0+12,y0+30, graphics/material/selectionbubbles/hover/white/topleft)"
+					-2="image(x0-7,y0+30,x0+12,y0+42, graphics/material/selectionbubbles/hover/white/bottomleft)"
+					-1="image(x0+12,y0+11,x0+31,y0+30, graphics/material/selectionbubbles/hover/white/topright)"
+					0="image(x0+12,y0+30,x0+31,y0+49, graphics/material/selectionbubbles/hover/white/bottomright)"
+				}
+				render {
+					0="image(x0+10, y0+22, x1, y1, graphics/icons/menu/hover/menu)"
+				}
+			}
+			
+			ClientListButton:selected {
+				render_bg{
+					-3="image(x0-7,y0+11,x0+12,y0+30, graphics/material/selectionbubbles/hover/white/topleft)"
+					-2="image(x0-7,y0+30,x0+12,y0+42, graphics/material/selectionbubbles/hover/white/bottomleft)"
+					-1="image(x0+12,y0+11,x0+31,y0+30, graphics/material/selectionbubbles/hover/white/topright)"
+					0="image(x0+12,y0+30,x0+31,y0+49, graphics/material/selectionbubbles/hover/white/bottomright)"
+				}
+
+				render {
+					0="image(x0+10, y0+22, x1, y1, graphics/icons/menu/hover/menu)"
+				}
+			}
+		
+		// This button is for "Activate" when received games as gifts.
+		DetailsButton {
+			bgcolor=none
+			textcolor=grey100
+			font-family=mediumfont
+			font-size=28
+			font-size=29 [$OSX]
+			font-weight=600
+			font-style=uppercase
+			padding-left=60
+			padding-top=10
+			padding-right=60
+			padding-bottom=10
+			inset="0 -2 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x1,y1, grey100transparent)"
+				1="fill(x0,y0,x0+3,y1, grey100)"
+				2="fill(x0,y0,x1,y0+3, grey100)"
+				3="fill(x1-3,y0,x1,y1, grey100)"
+				4="fill(x0,y1-3,x1,y1, grey100)"
+			}
+		}
+		
+			DetailsButton:hover {
+				render_bg {
+					0="fill(x0,y0,x1,y1, grey100lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, grey100)"
+					2="fill(x0,y0,x1,y0+3, grey100)"
+					3="fill(x1-3,y0,x1,y1, grey100)"
+					4="fill(x0,y1-3,x1,y1, grey100)"
+				}
+			}
+			
+			DetailsButton:active {
+				render_bg {
+					0="fill(x0,y0,x1,y1, grey100lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, grey100)"
+					2="fill(x0,y0,x1,y0+3, grey100)"
+					3="fill(x1-3,y0,x1,y1, grey100)"
+					4="fill(x0,y1-3,x1,y1, grey100)"
+				}
+			}
+		
+		DetailsLaunchButton {
+			bgcolor=none
+			textcolor=limeA400
+			font-family=mediumfont
+			font-size=28
+			font-size=29 [$OSX]
+			font-weight=600
+			font-style=uppercase
+			padding-left=60
+			padding-top=10
+			padding-right=60
+			padding-bottom=10
+			inset="0 -2 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x1,y1, limeA400transparent)"
+				1="fill(x0,y0,x0+3,y1, limeA400)"
+				2="fill(x0,y0,x1,y0+3, limeA400)"
+				3="fill(x1-3,y0,x1,y1, limeA400)"
+				4="fill(x0,y1-3,x1,y1, limeA400)"
+			}
+		}
+		
+			DetailsLaunchButton:Hover {
+				render_bg {
+					0="fill(x0,y0,x1,y1, limeA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, limeA400)"
+					2="fill(x0,y0,x1,y0+3, limeA400)"
+					3="fill(x1-3,y0,x1,y1, limeA400)"
+					4="fill(x0,y1-3,x1,y1, limeA400)"
+				}
+			}
+			
+			DetailsLaunchButton:Selected {
+				render_bg {
+					0="fill(x0,y0,x1,y1, limeA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, limeA700)"
+					2="fill(x0,y0,x1,y0+3, limeA700)"
+					3="fill(x1-3,y0,x1,y1, limeA700)"
+					4="fill(x0,y1-3,x1,y1, limeA700)"
+				}
+			}
+		
+			DetailsLaunchButton:Active {
+				render_bg {
+					0="fill(x0,y0,x1,y1, limeA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, limeA700)"
+					2="fill(x0,y0,x1,y0+3, limeA700)"
+					3="fill(x1-3,y0,x1,y1, limeA700)"
+					4="fill(x0,y1-3,x1,y1, limeA700)"
+				}
+			}
+		
+		DetailsInstallButton {
+			bgcolor=none
+			textcolor=lightblueA200
+			font-family=mediumfont
+			font-size=28
+			font-size=29 [$OSX]
+			font-weight=600
+			font-style=uppercase
+			padding-left=60
+			padding-top=10
+			padding-right=60
+			padding-bottom=10
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x1,y1, lightblueA200transparent)"
+				1="fill(x0,y0,x0+3,y1, lightblueA200)"
+				2="fill(x0,y0,x1,y0+3, lightblueA200)"
+				3="fill(x1-3,y0,x1,y1, lightblueA200)"
+				4="fill(x0,y1-3,x1,y1, lightblueA200)"
+			}
+		}
+		
+			DetailsInstallButton:Hover {
+				render_bg {
+					0="fill(x0,y0,x1,y1, lightblueA200lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, lightblueA200)"
+					2="fill(x0,y0,x1,y0+3, lightblueA200)"
+					3="fill(x1-3,y0,x1,y1, lightblueA200)"
+					4="fill(x0,y1-3,x1,y1, lightblueA200)"
+				}
+			}
+			
+			DetailsInstallButton:Selected {
+				render_bg {
+					0="fill(x0,y0,x1,y1, lightblueA200lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, lightblueA400)"
+					2="fill(x0,y0,x1,y0+3, lightblueA400)"
+					3="fill(x1-3,y0,x1,y1, lightblueA400)"
+					4="fill(x0,y1-3,x1,y1, lightblueA400)"
+				}
+			}
+		
+			DetailsInstallButton:Active {
+				render_bg {
+					0="fill(x0,y0,x1,y1, lightblueA200lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, lightblueA400)"
+					2="fill(x0,y0,x1,y0+3, lightblueA400)"
+					3="fill(x1-3,y0,x1,y1, lightblueA400)"
+					4="fill(x0,y1-3,x1,y1, lightblueA400)"
+				}
+			}
+		
+		DetailsBuyButton {
+			bgcolor=none
+			textcolor=amberA400
+			font-family=mediumfont
+			font-size=28
+			font-size=29 [$OSX]
+			font-weight=600
+			font-style=uppercase
+			padding-left=60
+			padding-top=10
+			padding-right=60
+			padding-bottom=10
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x1,y1, amberA400transparent)"
+				1="fill(x0,y0,x0+3,y1, amberA400)"
+				2="fill(x0,y0,x1,y0+3, amberA400)"
+				3="fill(x1-3,y0,x1,y1, amberA400)"
+				4="fill(x0,y1-3,x1,y1, amberA400)"
+			}
+		}
+		
+			DetailsBuyButton:hover {
+				render_bg {
+					0="fill(x0,y0,x1,y1, amberA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, amberA400)"
+					2="fill(x0,y0,x1,y0+3, amberA400)"
+					3="fill(x1-3,y0,x1,y1, amberA400)"
+					4="fill(x0,y1-3,x1,y1, amberA400)"
+				}
+			}
+			
+			DetailsBuyButton:active {
+				render_bg {
+					0="fill(x0,y0,x1,y1, amberA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, amberA700)"
+					2="fill(x0,y0,x1,y0+3, amberA700)"
+					3="fill(x1-3,y0,x1,y1, amberA700)"
+					4="fill(x0,y1-3,x1,y1, amberA700)"
+				}
+			}
+		
+			DetailsBuyButton:selected {
+				render_bg {
+					0="fill(x0,y0,x1,y1, amberA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, amberA700)"
+					2="fill(x0,y0,x1,y0+3, amberA700)"
+					3="fill(x1-3,y0,x1,y1, amberA700)"
+					4="fill(x0,y1-3,x1,y1, amberA700)"
+				}
+			}
+
+			DetailsBuyButton:active {
+				render_bg {
+					0="fill(x0,y0,x1,y1, amberA400lesstransparent)"
+					1="fill(x0,y0,x0+3,y1, amberA700)"
+					2="fill(x0,y0,x1,y0+3, amberA700)"
+					3="fill(x1-3,y0,x1,y1, amberA700)"
+					4="fill(x0,y1-3,x1,y1, amberA700)"
+				}
+			}
+	}
+	
+	layout {
+		region {
+			name=header
+			x=0
+			y=0
+			width=max
+			height=max
+		}
+		
+		place {
+			control=launchbutton
+			region=header
+			dir=right
+			align=middle
+			spacing=0
+		}
+		
+		place {
+			control=clientlist
+			start=launchbutton
+			region=header
+			dir=right
+			x=8
+			width=24
+		}
+		
+		place {
+			control=subheaderlabels
+			start=launchbutton
+			region=header
+			dir=down
+			align=left
+			y=30
+		}
+	}
+}

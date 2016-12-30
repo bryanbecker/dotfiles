@@ -1,0 +1,55 @@
+"resource/layout/gamespage_details_community_file.layout" {
+	colors {
+		GameDetailsCommunityFile.ExtraVerticalSpacing = "180"  
+		GameDetailsCommunityFile.ExtraHorizontalSpacing = "200"
+		GameDetailsCommunityFile.MaxTooltipWidth = "300"
+		GameDetailsCommunityFile.MaxTooltipHeight = "90"
+	}
+	
+	styles {
+		communityfile_name {
+			textcolor=text_onDarkBG
+			font-size=18
+			font-size=19 [$OSX]
+		}
+		
+		communityfile_image_border {
+		    render_bg {}	
+		}	
+    
+		communityfile_rating_image_background {
+		    render_bg {}
+		}	    
+	}
+
+	layout {
+		place {
+			control=communityfile_image_border,communityfile_rating_image_background,friendimage
+			region=body
+			width=0
+			height=0
+		}
+		
+		place {
+			control=communityfile_image
+			region=body
+			align=top-center
+			width=160
+			height=100
+		}
+
+		place {
+			control=communityfile_name
+			region=body
+			align=top-center
+			y=108
+		}
+
+		place {
+			control=communityfile_rating_image
+			region=body
+			align=top-center
+			y=132
+		}
+	}
+}

@@ -1,0 +1,94 @@
+"resource/layout/setcustomimagedialog.layout" {
+	styles {
+		SetCustomImageDialog {
+			minimum-width = 400
+			minimum-height = 280
+		}
+	}
+
+	layout {
+		region {
+			name="top"
+			width=max
+			height=150
+			margin=10
+			margin-top=54
+		}
+
+		region {
+			name="middle"
+			y=140
+			width=max
+			height=150
+			margin=10
+		}
+
+		region {
+			name="bottom"
+			align=bottom
+			width=max
+			height=51
+		}
+		place {
+			control="ChooseAnImage"
+			region="top"
+			width=max
+			margin-left=16
+			margin-right=16
+		}
+
+		place {
+			control="ImagePrescription"
+			region="top"
+			start="ChooseAnImage"
+			width=max
+			margin-top=15
+			margin-right=16
+			dir=down
+		}
+		place {
+			control="ThisFile"
+			region="middle"
+			width=360
+			margin-left=16
+			margin-top=15
+			margin-right=16
+		}
+
+		place {
+			control="Filename"
+			region="middle"
+			start="ThisFile"
+			dir=down
+			width=280
+			margin-top=7
+			margin-right=8
+		}
+
+		place {
+			control="Browse"
+			region="middle"
+			start="Filename"
+			align=right
+			margin-right=16
+			dir=right
+		}
+
+		place {
+			control="TryAgain"
+			region="middle"
+			start="Browse"
+			margin-left=16
+			dir=right
+		}
+		place {
+			control="OK,Cancel"
+			region="bottom"
+			align=right
+			margin-top=14
+			margin-right=14
+			height=24
+			spacing=8
+		}
+	}
+}

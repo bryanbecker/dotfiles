@@ -1,0 +1,88 @@
+"resource/layout/gameproperties_general.layout" {
+	layout {
+		place {
+			control=HomepageLabelName
+			x=24
+			y=30
+			width=120
+		}
+
+		place {
+			control=HomePageLabel
+			start=HomePageLabelName
+			x=8
+			margin-right=23
+			dir=right
+		}
+
+		place {
+			control=DeveloperLabelName
+			start=HomepageLabelName
+			y=16
+			width=120
+			dir=down
+		}
+
+		place {
+			control=DeveloperLabel
+			start=DeveloperLabelName
+			x=8
+			margin-right=23
+			dir=right
+		}
+
+		place {
+			control=ManualLabelName
+			start=DeveloperLabelName
+			y=16
+			width=120
+			dir=down
+		}
+
+		place {
+			control=ManualLabel,NoManualLabel
+			start=ManualLabelName
+			x=8
+			margin-right=23
+			dir=right
+		}
+
+		place {
+			control=Divider1
+			start=ManualLabelName
+			y=16
+			width=max
+			margin-right=23
+			dir=down
+		}
+
+		place {
+			control=EnableOverlayCheck,EnableDesktopGameTheater
+			start=Divider1
+			y=16
+			dir=down
+		}
+
+		place {
+			controls=LaunchOptionsButton,CreateDesktopShortcutButton
+			start=EnableDesktopGameTheater
+			y=16
+			width=340
+			height=28
+			dir=down
+			spacing=16
+		}
+
+		place {
+			controls=FamilySharingUnsupportedLabel
+			margin-top=462
+			margin-left=20
+		}
+		
+		place {
+			controls=ExternalSignupLabel,ExternalSignupButton
+			width=0
+			height=0
+		}
+	}
+}

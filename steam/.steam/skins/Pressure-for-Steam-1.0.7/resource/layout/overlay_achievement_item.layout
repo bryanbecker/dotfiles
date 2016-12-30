@@ -1,0 +1,48 @@
+"resource/layout/overlay_achievement_item.layout" {
+	styles {
+		label {
+			textcolor=white
+			font-size=15
+font-size=14 [$LINUX]
+		}
+
+		name {
+			textcolor=white
+			font-size=26
+			font-family=semibold
+			font-weight=bold
+		}
+	}
+	layout {
+		region {
+			name=body
+			width=max
+		}
+
+		place {
+			control=icon
+			region=body
+			x=0
+			y=0
+			width=64
+			height=64
+		}
+
+		place {
+			control=caption
+			region=body
+			start=icon
+			x=10
+			y=12
+			dir=right
+		}
+
+		place {
+			control=name
+			region=body
+			start=caption
+			y=-4
+			dir=down
+		}
+	}
+}

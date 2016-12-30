@@ -1,0 +1,65 @@
+"resource/layout/subpaneloptionsbrowser.layout" {
+	styles {
+		highlight {
+			textcolor=Text
+		}
+
+		checkbox {
+			padding-top=0
+			padding-bottom=0
+		}
+	}
+
+	layout {
+		place {
+			controls=DescriptionLabel
+			width=max
+			margin-left=20
+			margin-top=20
+			margin-right=43
+		}
+		place {
+			controls=OverlayHomePageLabel
+			start=DescriptionLabel
+			width=200
+			margin-top=20
+
+			dir=down
+		}
+		place {
+			controls=OverlayHomePage
+			start=OverlayHomePageLabel
+			width=max
+			margin-top=5
+			margin-right=43
+			dir=down
+		}
+		place {
+			controls=Divider1
+			region=bottom
+			start=OverlayHomePage
+			width=max
+			margin-top=15
+			margin-right=43
+			dir=down
+		}
+		place {
+			controls=ClearAllCookiesButton
+			region=bottom
+			start=Divider1
+			width=240
+			height=28
+			margin-top=15
+			dir=down
+		}
+		place {
+			controls=ClearWebCacheButton
+			region=bottom
+			start=ClearAllCookiesButton
+			width=240
+			height=28
+			margin-top=15
+			dir=down
+		}
+	}
+}

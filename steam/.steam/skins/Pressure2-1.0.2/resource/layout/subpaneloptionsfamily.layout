@@ -1,0 +1,107 @@
+"resource/layout/subpaneloptionscloud.layout" {
+	styles {
+		highlight {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+	}
+
+	layout {
+		region {
+			name=page
+			x=24
+			y=24
+			width=max
+			height=max
+			margin-right=24
+		}
+
+    place {
+      controls="FamilyOptionsTitle"
+      region=page
+      dir=down
+    }
+		place {
+      controls="FamilyOptionsText"
+      start=FamilyOptionsTitle
+      y=8
+      width=490
+      dir=down
+    }
+		place {
+      controls="ManageOptionsLabel"
+      start=FamilyOptionsText
+      y=5
+      width=235
+      height=24
+      dir=down
+    }
+
+		place {
+      controls="Divider1"
+      start=ManageOptionsLabel
+      dir=down
+      y=16
+      width=max
+    }
+		place {
+      controls="FamilySharingTitle"
+      start=Divider1
+      dir=down
+      y=16
+    }
+
+		place {
+      controls="FamilySharingInfoText"
+      start=FamilySharingTitle
+      y=8
+      width=490
+      dir=down
+    }
+		place {
+      controls="AuthorizedDeviceCheck"
+      y=13
+      x=10
+      width=300
+      height=24
+      start=FamilySharingInfoText
+      dir=down
+    }
+		place {
+      controls="ManageSharingLabel"
+      y=13
+      width=235
+      height=24
+      margin-left=320
+      start=FamilySharingInfoText
+      dir=down
+    }
+
+		place {
+      controls="BorrowersLabel"
+      start=FamilySharingInfoText
+      y=44
+      width=490
+      dir=down
+    }
+		place {
+      controls="BorrowersList"
+      region=page
+      start=BorrowersLabel
+      width=max
+      height=125
+      y=6
+      dir=down
+    }
+		place {
+      controls="ShowNotificationsCheck"
+      start=BorrowersList
+      y=10
+      x=10
+      dir=down
+    }
+	}
+}

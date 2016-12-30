@@ -1,0 +1,102 @@
+"resource/layout/gamespage_details_dlc.layout" {
+	colors {
+		RichText.InsetX = "0"
+		RichText.InsetY = "3" 
+		GameDetailsDLC.ExtraVerticalSpacing = "240"
+	}
+
+	styles {
+		mostrecenttime {}
+
+		dlcdetails {
+			render_bg {
+				0="fill(x0-20,y0-15,x1,y0-14, dividers_onLightBG)"
+			}
+		}
+
+		bodycontent {
+			textcolor=text_onLightBG
+			selectedtextcolor=white	
+			font-size=18
+			font-size=19 [$OSX]
+
+			render_bg {}
+		}
+
+		DLC_Uninstalled {
+			textcolor=disabled_onLightBG
+			selectedtextcolor=white
+		}
+
+		DLC_Installed {
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+		}
+
+		ListPanelColumnHeader {
+			inset-top=0
+		}
+	}
+
+	layout {
+		place {
+			control=latesttimelabel
+			region=body
+			width=0
+			height=0
+		}
+
+		region {
+			name=body
+			width=max
+			height=max
+			margin=8
+		}
+
+		place {
+			control=headerlabel
+			region=body
+			width=max
+		}
+
+		place {
+			control=latestimage
+			region=body
+			y=40
+			width=257
+			height=120
+		}
+
+		place {
+			control=overlayimage
+			region=body
+			y=42
+			width=257
+			height=120
+		}
+
+		place {
+			control=dlclist
+			region=body
+			width=max
+		}
+
+		place {
+			control=latestimage,dlclist
+			region=body
+			dir=right
+			y=42
+			height=120
+			spacing=8
+		}
+
+		place {
+			control=moredlc
+			region=body
+			dir=right
+			y=175
+			height=34
+			spacing=10
+		}
+	}
+}

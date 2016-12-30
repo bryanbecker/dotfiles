@@ -1,0 +1,69 @@
+"resource/layout/overlay_broadcastpanel.layout" {
+	styles {
+		DarkRegion {}
+		PreviewImage {}
+
+		detailsbox {
+			render_bg {
+				0="fill(x0,y0,x1,y1, secondaryText_OnLightBG)"
+			}
+		}
+
+		highlight {
+			textcolor=secondaryText_onDarkBG
+			font-size=17
+			font-size=18 [$OSX]
+		}
+	}
+	
+	layout {
+		place {
+			control=ShowSettings
+			height=0
+		}
+
+		region {
+			name=title
+			width=max
+			height=max
+			x=23
+			y=29
+			margin-right=23
+			margin-bottom=58
+		}
+
+		place {
+			control=TitleText,InstructionText
+			region=title
+			dir=down
+			spacing=20
+		}
+
+		region {
+			name=buttons
+			align=bottom
+			width=max
+			height=58
+		}
+
+		place {
+			control=StopBroadcast
+			region=buttons
+			align=left
+			height=34
+			margin-left=11
+			margin-top=12			
+			spacing=12
+		}
+
+		place {
+			control=ShowBroadcast,ShowChat
+			region=buttons
+			align=right
+			height=34
+			margin-top=12
+			margin-right=11
+			spacing=12
+		}
+	}
+}

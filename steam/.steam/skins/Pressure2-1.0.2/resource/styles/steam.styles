@@ -1,0 +1,1343 @@
+steam.styles {
+	include "includes/colors.styles"
+	include "includes/settings.styles"
+	include "includes/fonts.styles"
+	include "includes/scrollbars.styles"
+	include "includes/window-controls.styles"
+	include "includes/controls.styles"
+	include "includes/web.styles"
+	include "config.ini"
+
+	styles {
+		"Csteamrootdialog ListPanelColumnHeader:hover" {}
+
+		FrameTitle {
+			bgcolor=customgreyprimary
+			textcolor=disabled_OnDarkBG
+			font-family=basefont
+			font-size=24
+			font-size=25 [$OSX]
+			font-weight=400
+			padding-right=64			
+			inset="4 1 0 0"
+			inset="0 8 0 0" [$OSX]
+
+			render_bg {
+				0="fill(x0,y0,x1,y0+1, customgreyaccent)"
+			}
+		}
+		
+			FrameTitle:framefocus {
+				textcolor=white
+			}
+
+		Frame {
+			bgcolor=custombackgroundnofocus
+		} 
+			
+			Frame:FrameFocus {
+				bgcolor=custombackgroundprimary
+			}
+
+		Divider {
+			bgcolor=none
+
+			render {
+				0="fill(x0, y1 - 1, x1, y1, dividers_OnLightBG)"
+			}
+		}
+
+		Page {
+			bgcolor=none
+
+			render_bg {}
+		}
+
+		Panel { 
+			textcolor=text_OnLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400
+		}
+
+		PropertyPage {
+			bgcolor=none
+		}
+
+		Label {
+			bgcolor=none
+			selectedbgcolor=blue500
+			textcolor=text_OnLightBG
+			selectedtextcolor=text_OnLightBG
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+		}
+
+		URLLabel {
+			textcolor=blue500
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			font-style=underline
+		}
+		
+			URLLabel:Hover {
+				textcolor=blue300
+			}
+
+		URLLabelSimple {
+			textcolor=blue500
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			font-style=underline
+		}
+		
+			URLLabelSimple:Hover {
+				textcolor=blue300
+			}
+	 
+		URLLabelSimple2 {
+			textcolor=blue500
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			font-style=underline
+		}
+		
+			URLLabelSimple2:Hover {
+				textcolor=blue300
+			} 
+
+		Menu {
+			bgcolor=white
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x0+1,y1, dividers_OnLightBG)"
+				1="fill(x0+1,y0,x1-1,y0+1, dividers_OnLightBG)"
+				2="fill(x1-1,y0,x1,y1, dividers_OnLightBG)"
+				3="fill(x0+1,y1-1,x1-1,y1, dividers_OnLightBG)"
+			}
+		}
+		
+		MenuItem {
+			bgcolor=none
+			textcolor=text_OnLightBG
+			font-family=basefont			
+			font-size=17
+			font-size=18 [$OSX]
+			font-weight=400
+			inset="0 0 0 0"
+			padding-left=6
+			padding-right=6			
+			
+			render_bg {}
+		}
+
+			MenuItem:hover {
+				textcolor=white
+				bgcolor=blue500
+			}
+		
+			MenuItem:disabled {
+				textcolor=disabled_OnLightBG
+				shadowtextcolor=none
+			}
+		
+				MenuItem:disabled:hover {
+					textcolor=disabled_OnLightBG
+					shadowtextcolor=none
+				}
+
+			MenuItem:selected {
+				textcolor=white
+				bgcolor=blue500
+			}
+
+		MenuSeparator {
+			bgcolor=none
+			textcolor=none
+			inset="0 0 0 0"			
+
+			render {
+				0="fill(x0+1, y0+1, x1-1, y0+2, dividers_OnLightBG)"
+			}
+		}
+
+		SuperNavMenu {
+			bgcolor=white
+			padding-left=8
+			padding-right=8
+
+			render {}
+			render_bg {
+				0="fill(x0,y0,x0+1,y1, dividers_OnLightBG)"
+				1="fill(x0+1,y0,x1-1,y0+1, dividers_OnLightBG)"
+				2="fill(x1-1,y0,x1,y1, dividers_OnLightBG)"
+				3="fill(x0+1,y1-1,x1-1,y1, dividers_OnLightBG)"
+			}
+		}
+
+		SuperNavMenuItem {
+			bgcolor=none
+			textcolor=text_OnLightBG
+			font-size=17
+			font-size=18 [$OSX]
+			font-style=normal
+		}
+
+			SuperNavMenuItem:hover {
+				bgcolor=blue500
+				textcolor=white				
+			}
+
+			SuperNavMenuItem:selected {
+				bgcolor=blue500
+				textcolor=white				
+			}
+
+		SuperNavMenuDivider {
+			textcolor=none
+
+			render {
+				1="fill(x0+1, y0+1, x1-1, y0+2, dividers_OnLightBG)"
+			}
+		}
+
+		Notification {
+			bgcolor=customgreysecondary
+			textcolor=text_onDarkBG
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			minimum-width=289
+			minimum-height=98		
+
+			render {
+				0="fill(x0,y0,x0+1,y1, dividers_onDarkBG)"
+				1="fill(x0+1,y0,x1,y0+1, dividers_onDarkBG)"
+				2="fill(x1-1,y0+1,x1,y1, dividers_onDarkBG)"
+			}
+		}
+
+		gamedetails-headerlabel {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+
+		gamedetails-headerlabel-red {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+
+		gamedetails-headerlabel-green {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+
+		gamedetails-headerlabel-blue {
+			textcolor=customgreyprimary
+			font-family=mediumfont
+			font-size=30
+			font-size=31 [$OSX]
+			font-style=normal
+		}
+
+		GameItem_Uninstalled {
+			selectedbgcolor=blue500
+			textcolor=disabled_onLightBG
+			selectedtextcolor=white		
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+	 
+		GameItem_Installed {
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white		
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]				
+		}
+		
+		GameItem_Shortcut {
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+	
+		GameItem_Mod {
+			selectedbgcolor=blue500
+			textcolor=bluegrey900
+			selectedtextcolor=white
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+
+		GameItem_Updating {
+			selectedbgcolor=blue500
+			textcolor=orange500
+			selectedtextcolor=white
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=italic			
+		}
+		
+		GameItem_Decrypting {
+			selectedbgcolor=blue500
+			textcolor=green500
+			selectedtextcolor=white
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=italic			
+		}
+		
+		GameItem_Syncing {
+			selectedbgcolor=blue500
+			textcolor=orange500
+			selectedtextcolor=white
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=italic
+		}
+
+		GameColumnHeaderFavorites {
+			image="steam/cached/fav_remove"
+		}
+		
+		CGamesListFavoritesToggle {
+			image="steam/cached/fav_addTo"
+		}
+		
+			CGamesListFavoritesToggle:hover {
+				image="steam/cached/fav_addTo_ovr"
+			}
+		
+			CGamesListFavoritesToggle:selected {
+				image="steam/cached/fav_remove"
+			}
+
+				CGamesListFavoritesToggle:selected:hover {
+					image="steam/cached/fav_remove_ovr"
+				}
+
+		CConsoleHistory {
+			bgcolor=customgreysecondary
+			selectedbgcolor=blue500
+			textcolor=text_onDarkBG
+			selectedtextcolor=white
+			font-family="Lucida Console"
+			font-family="Menlo" [$OSX]
+			font-size=11
+			font-size=14 [$OSX]
+
+			render {}
+			render_bg {}
+		}
+
+		console_text_error {
+			selectedbgcolor=blue500
+			textcolor=amber500
+			selectedtextcolor=white
+			font-family="Lucida Console"
+			font-family="Menlo" [$OSX]
+			font-size=11
+			font-size=14 [$OSX]
+		}
+		
+		console_text {
+			selectedbgcolor=blue500
+			textcolor=text_onDarkBG
+			selectedtextcolor=white
+			font-family="Lucida Console"
+			font-family="Menlo" [$OSX]
+			font-size=11
+			font-size=14 [$OSX]
+		}
+
+		GraphPanel {
+			bgcolor=none
+			textcolor=lime500
+			
+			render_bg {}
+		}	
+
+		ListPanel {
+			bgcolor=white
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			shadowtextcolor=disabled_onLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400
+			inset="0 0 0 0"
+			padding-left=8
+
+			render {
+				0="fill(x0,y0,x0+1,y1-1, dividers_OnLightBG)"
+				1="fill(x1-1,y0,x1,y1-1, dividers_OnLightBG)"
+				2="fill(x0, y1-1, x1, y1, dividers_OnLightBG)"
+			}
+		}
+		
+		CGamesListPanel {
+			bgcolor=white
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			shadowtextcolor=disabled_onLightBG
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			inset="0 0 0 0"
+
+			render {}	
+			render_bg {}
+		}
+
+		GameColumn_BigText {
+			textcolor=text_onLightBG
+			font-family=basefont
+			font-size=18
+			font-size=19 [$OSX]
+			font-weight=700			
+		}
+
+		ListPanelColumnheader {
+			bgcolor=customgreyaccent
+			textcolor=secondaryText_OnDarkBG
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=600
+			font-style=uppercase
+			minimum-height=0
+			inset="0 0 0 0"
+			inset-top=1
+
+			render_bg {
+				0="fill(x0, y0, x1, y1+1, customgreysecondary)"
+			}
+		}
+
+			ListPanelColumnheader:hover {
+				textcolor=text_onDarkBG
+			}
+
+		"CSteamRootDialog ListPanelColumnheader" {
+			inset-top=-8
+			padding-left=2
+
+			render_bg {}
+		}
+		
+		"Csteamrootdialog ListPanelSectionCollapser" {
+			bgcolor=none
+			inset="0 0 0 0"
+			
+			render_bg {
+				0="fill(x0 , y0, x1, y1 - 1, dividers_onDarkBG)"
+			}	
+		}
+		
+		ListPanelColumnSelectButton {
+			inset="0 0 0 0"
+
+			render {
+				0="image( x0, y0, x1, y1, graphics/icons/columnselectbutton/standard/columnselectbutton_light)"
+			}
+
+			render_bg {
+				0="fill( x0, y0, x1, y1+1, customgreysecondary )"
+			}
+		}
+		
+			ListPanelColumnSelectButton:hover {
+				render {
+					0="image( x0, y0, x1, y1, graphics/icons/columnselectbutton/hover/columnselectbutton_light)"
+				}
+			}
+
+			ListPanelColumnSelectButton:selected {
+				render {
+					0="image( x0, y0, x1, y1, graphics/icons/columnselectbutton/hover/columnselectbutton_light)"
+				} 
+			}
+
+		ListPanelDragger {
+			bgcolor=none
+			
+			render {}
+		}
+		
+		ListPanelInterior { 
+			bgcolor=none
+			textcolor=text_onLightBG
+			font-size=16
+			font-size=17 [$OSX]
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {}
+		} 
+		
+			ListPanelInterior:scrollbar {	 
+				bgcolor=none
+				textcolor=text_onLightBG
+				inset="0 0 -1 0"
+				
+				render {}
+				render_bg {}
+			} 
+
+		ListPanelSectionHeader {	 
+			textcolor=text_onLightBG
+			font-family=mediumfont
+			font-style=regular
+			inset="0 0 0 0"
+
+			render_bg {
+				0="fill(x0,y0,x1,y1, white)"
+				1="fill(x0,y0,x1,y0+1, dividers_onLightBG)"
+				2="fill(x0,y1-1,x1,y1, dividers_onLightBG)"
+			}	
+		}
+		
+			ListPanelSectionHeader:hover {	 
+				textcolor=secondarytext_onLightBG
+			}
+		
+		"ListPanel RichText" {
+			bgcolor=none
+			textcolor=text_onLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]			
+
+			render_bg {}
+		}
+
+		"ListPanel RichText url" {
+			textcolor=blue500
+			font-size=15
+			font-size=16 [$OSX]		
+			font-style=underline
+		}
+
+		"ListPanel RichTextInterior" {
+			bgcolor=none
+
+			render_bg {}
+		}
+		
+		ListPanelSectionCollapser {
+			inset="0 0 0 0"
+			padding-left=8
+			padding-right=8
+			image=graphics/icons/dropdown/padder			
+
+			render {}
+			render_bg {
+				0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+				1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+				2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/standard/down_dark)"
+			}
+		}
+
+			ListPanelSectionCollapser:hover {
+				render_bg {
+					0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+					1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+					2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/hover/down_dark)"
+				}
+			}
+
+			ListPanelSectionCollapser:selected {
+				render_bg {
+					0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+					1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+					2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/standard/up_dark)"
+				}
+			}
+
+				ListPanelSectionCollapser:selected:hover {
+					render_bg {
+						0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+						1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+						2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/hover/up_dark)"
+					}
+				}
+
+		"CSteamRootDialog Page" {
+			bgcolor=none
+
+			render_bg {}
+		}
+
+		PageTab {
+			textcolor=secondarytext_onDarkBG
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=regular
+
+			render_bg {}
+		}
+
+			PageTab:Hover {
+				textcolor=text_onDarkBG
+
+				render_bg {
+					0="image(x0,y0,x0+2,y0+2, graphics/material/tab/white/topleft)"
+					1="image_tiled(x0+2,y0,x1-2, y0+2, graphics/material/tab/white/middle)"
+					2="image_tiled(x0,y0+2,x1, y1, graphics/material/tab/white/middle)"
+					3="image(x1-2,y0,x1,y0+2, graphics/material/tab/white/topright)"
+				}
+			}
+
+			PageTab:Selected {
+				textcolor=blue500
+
+				render_bg {
+					0="fill(x0,y1-3,x1,y1, blue500)"
+					1="image(x0,y0,x0+2,y0+2, graphics/material/tab/blue/topleft)"
+					2="image_tiled(x0+2,y0,x1-2, y0+2, graphics/material/tab/blue/middle)"
+					3="image_tiled(x0,y0+2,x1, y1, graphics/material/tab/blue/middle)"
+					4="image(x1-2,y0,x1,y0+2, graphics/material/tab/blue/topright)"
+				}
+			}
+
+				PageTab:Selected:hover {
+					textcolor=blue300
+
+					render_bg {
+						0="fill(x0,y1-3,x1,y1, blue300)"
+						1="image(x0,y0,x0+2,y0+2, graphics/material/tab/blue/topleft)"
+						2="image_tiled(x0+2,y0,x1-2, y0+2, graphics/material/tab/blue/middle)"
+						3="image_tiled(x0,y0+2,x1, y1, graphics/material/tab/blue/middle)"
+						4="image(x1-2,y0,x1,y0+2, graphics/material/tab/blue/topright)"
+					}
+				}
+
+		ProgressBar {
+			bgcolor=white
+			textcolor=lightgreen500			
+			inset="0 0 0 0"
+			
+			render {}
+			render_bg {
+				0="fill(x0,y0,x0+1,y1, dividers_OnLightBG)"
+				1="fill(x0+1,y0,x1-1,y0+1, dividers_OnLightBG)"
+				2="fill(x1-1,y0,x1,y1, dividers_OnLightBG)"
+				3="fill(x0+1,y1-1,x1-1,y1, dividers_OnLightBG)"
+			}
+		}
+
+		RadioButtonList {
+			bgcolor=none
+		}
+
+		RichText {
+			textcolor=text_OnLightBG
+			selectedtextcolor=text_OnLightBG		
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400
+			inset="0 0 0 0"
+		
+			render_bg {}	 
+		}
+			 
+		RichTextInterior {
+			bgcolor=none
+		}
+		
+		"RichText url" {
+			selectedbgcolor=blue500
+			textcolor=blue500
+			selectedtextcolor=white
+			font-size=15
+			font-size=16 [$OSX]
+			font-style=underline
+		}
+
+		"RichText bold" {
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=1000
+		}
+		
+		"RichText emphasis" {
+			font-size=15
+			font-size=16 [$OSX]
+			font-style=italic
+		}
+		
+			"RichText url:hover" {
+				textcolor=blue300
+			}
+		
+		"CFriendPanel RichText URL" {
+			textcolor=blue500
+			font-style=underline
+			font-size=14
+			font-size=15 [$OSX]
+		}	
+
+		SectionedListPanel {			
+			bgcolor=custombackgroundprimary
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400			
+			inset="0 0 0 0"			
+
+			render {}
+			render_bg {}	
+		}
+		
+		SectionedListPanelCollapser {
+			bgcolor=none
+			padding-left=8
+			padding-right=8
+			inset="0 0 0 0"
+			image=graphics/icons/dropdown/padder
+
+			render {}
+			render_bg {
+				0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+				1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+				2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/standard/down_dark)"
+			}
+		}
+
+			SectionedListPanelCollapser:hover {
+				render_bg {
+					0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+					1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+					2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/hover/down_dark)"
+				}
+			}
+
+			SectionedListPanelCollapser:selected {
+				render_bg {
+					0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+					1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+					2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/standard/up_dark)"
+				}
+			}
+
+				SectionedListPanelCollapser:selected:hover {
+					render_bg {
+						0="fill(x0,y0-1,x1+2,y0, dividers_onLightBG)"
+						1="fill(x0,y1-1,x1+2,y1, dividers_onLightBG)"
+						2="image(x0+14,y0+6,x1,y1, graphics/icons/dropdown/hover/up_dark)"
+					}
+				}
+
+		StatusLabel {
+			textcolor=secondaryText_OnLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400			
+			font-style=uppercase
+		}
+
+			StatusLabel:hover {
+				textcolor=white
+				font-family=basefont
+				font-size=14
+				font-weight=400			
+				font-style=uppercase
+			}
+		
+		StatusLabelDim {
+			textcolor=disabled_OnLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+			font-weight=400
+			font-style=normal
+		}
+
+		MenuBar {
+			bgcolor=none
+		}
+		
+		"MenuBar MenuButton" {
+			textcolor=secondarytext_onDarkBG
+		}
+		
+			"MenuBar MenuButton:frameFocus" {
+				textcolor=text_onDarkBG
+			}
+		
+				"MenuBar MenuButton:frameFocus:hover" {
+					bgcolor=disabled_onDarkBG
+					textcolor=text_onDarkBG
+					
+					render_bg {}
+				}
+		
+				"MenuBar MenuButton:frameFocus:selected" {
+					bgcolor=blue500transparent
+					textcolor=blue500					
+				}
+		
+		MenuButton {
+			bgcolor=none
+			textcolor=white
+			font-family=basefont
+			font-size=14
+			font-size=15 [$OSX]
+			font-weight=400			
+			
+			render_bg {}
+		}
+
+			MenuButton:hover {
+				textcolor=white
+			}
+		
+			MenuButton:selected {
+				textcolor=white
+			}
+
+		TreeNode {
+			bgcolor=none
+
+			render_bg {}
+		}
+		
+		TreeNodeImage {
+			bgcolor=none
+		}
+		
+		TreeViewSubPanel {
+			bgcolor=none
+		}
+	
+		TreeNodeText {
+			bgcolor=none
+			selectedbgcolor=blue500
+			textcolor=text_OnLightBG
+			selectedtextcolor=white
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+
+			render {}
+			render_bg {}
+		}
+	
+		TreeView {
+			render_bg {}	 
+		}
+
+		COverlaySettingsDialog {
+			minimum-width=543
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+			
+			render_bg {
+				0="fill(x0,y0,x1, y0+55, customgreyprimary)"
+				1="fill(x0,y0,x1,y0+1, customgreyaccent)"
+			}
+		}
+
+		CProductMarketingDialog {
+			minimum-width=143
+			minimum-height=143
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CChangePasswordWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CChangeContactEmailWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CValidateContactEmailWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CWelcomeToSteamDialog {
+			render {
+				0="fill(x0,y0,x1-55,y0+1, customgreyprimary)"
+				1="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+			render_bg {
+				0="fill(x0,y0,x1,y0+113,customgreyprimary)"
+				0="image(x0+146,y0+35,x1,y1, graphics/steamlogo)"
+			}
+		}
+
+		CEmailAddressAlreadyUsedDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CSetNicknameDialog {
+			minimum-height=210
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CAboutDialog {
+			minimum-height=332
+
+			render {
+				0="fill(x0,y0,x1-55,y0+1, customgreyprimary)"
+				1="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+			render_bg {
+				0="fill(x0,y0,x1,y0+113,customgreyprimary)"
+				0="image(x0+106,y0+35,x1,y1, graphics/steamlogo)"
+			}
+		}
+
+		CFriendAliasesDialog {
+			minimum-width=350
+			minimum-height=374			
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CFriendNotificationOptionsDialog {
+			minimum-width=350
+			minimum-height=432			
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CCDKeyDisplayDialog {
+			render {
+				0="image(x0+24, y0+58, x1, y1, graphics/icons/key/key)"
+				1="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		COverlayCDKeyDialog {
+			render {
+				0="image(x0+24, y0+58, x1, y1, graphics/icons/key/key)"
+				1="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CPlayersDialog {
+			render {
+				0="image_tiled(x0,y0+34,x1,y0+38, graphics/material/shadows/top)"
+			}
+
+			render_bg {
+				0="fill(x0,y0,x1,y0+100, customgreysecondary)"
+			}
+		}
+
+		CGamePropertiesDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+			
+			render_bg {
+				0="fill(x0,y0,x1, y0+55, customgreyprimary)"
+				1="fill(x0,y0,x1,y0+1, customgreyaccent)"
+			}
+		}
+
+			"CGamePropertiesDialog PageTab" {
+				minimum-height=34
+			}
+
+		CSteamCacheWorkDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CGameLaunchParametersDialog {
+			minimum-height=198
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CEditTagsDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+
+			render_bg {
+				1="image(x0+24,y0+58,x1,y1, graphics/icons/category/category)"
+			}
+		}
+
+		CEditFriendsGroupsDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+
+			render_bg {
+				1="image(x0+24,y0+58,x1,y1, graphics/icons/category/category)"
+			}
+		}
+
+		CBackupWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CInstallAppWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CDialogGameInfo {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CSSADialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CRegisterSubIntro {
+			render {
+				0="image(x0+14, y0+18, x1, y1, graphics/icons/beta/beta)"
+			}
+		}
+
+		CRegisterSubEnterCDKey {
+			render {
+				0="image(x0+14, y0+18, x1, y1, graphics/icons/key/key)"
+			}
+		}
+
+		CRegisterSubReceipt {
+			render {
+				0="image(x0+14, y0+18, x1, y1, resource/icon_info)"
+			}
+		}
+
+		CRegisterCDKeyWizard {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CSteamShutdownDialog {
+			minimum-width=320
+			minimum-height=180
+
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+		}
+
+		CStreamingIntroDialog {
+			minimum-width=405
+			minimum-height=378
+			
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+
+			render_bg {}
+		}
+
+		CLaunchOptionsDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+
+			render_bg {}
+		}
+
+		TooltipWindow {
+			bgcolor=white
+			textcolor=secondaryText_onLightBG
+
+			render_bg {
+				0="fill(x0,y0,x0+1,y1, dividers_OnLightBG)"
+				1="fill(x0+1,y0,x1-1,y0+1, dividers_OnLightBG)"
+				2="fill(x1-1,y0,x1,y1, dividers_OnLightBG)"
+				3="fill(x0+1,y1-1,x1-1,y1, dividers_OnLightBG)"
+			}
+		}
+
+		"TooltipWindow Label" {
+			textcolor=secondaryText_OnLightBG
+			padding-left=8
+			padding-top=8
+			padding-right=8
+			padding-bottom=8			
+		}
+		
+		tooltip_headline {
+			textcolor=text_OnLightBG
+			font-size=18
+			font-size=19 [$OSX]	 
+			font-weight=600
+			padding-left=8
+			padding-top=8
+			padding-right=8			
+			padding-bottom=0			
+		}
+
+		ChatListPanel {
+			bgcolor=none
+			padding-left=14
+			padding-top=14			
+			padding-right=14
+
+			render {}
+			render_bg {}
+		}
+
+		friends_chat_text {
+			selectedbgcolor=blue500
+			textcolor=text_OnLightBG
+			selectedtextcolor=white 			
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_text_self {
+			selectedbgcolor=blue500
+			textcolor=secondaryText_OnLightBG
+			selectedtextcolor=white			
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_event {
+			selectedbgcolor=blue500
+			textcolor=orange500
+			selectedtextcolor=white
+			font-size=17
+			font-size=18 [$OSX]		
+		}
+
+		friends_chat_bright_event {
+			textcolor=orange500
+			selectedtextcolor=white
+			font-size=17
+			font-size=18 [$OSX]
+			font-weight=1000
+		}
+
+		friends_chat_url {
+			selectedbgcolor=blue500
+			textcolor=blue500
+			selectedtextcolor=white
+			font-style=underline
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_name_ingame {
+			selectedbgcolor=blue500
+			textcolor=lightgreen500
+			selectedtextcolor=white			
+			font-size=17
+			font-size=18 [$OSX]
+		}
+
+		friends_chat_name_golden {
+			selectedbgcolor=blue500
+			textcolor=orange500
+			selectedtextcolor=white
+			font-size=17
+			font-size=18 [$OSX]
+		}
+
+		friends_chat_self {
+			selectedbgcolor=blue500
+			textcolor=blue500
+			selectedtextcolor=white
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_name {
+			selectedbgcolor=blue500
+			textcolor=blue500
+			selectedtextcolor=white			
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_accountid {
+			selectedbgcolor=blue500
+			textcolor=white
+			selectedtextcolor=red500
+			font-size=17
+			font-size=18 [$OSX]
+		}
+		
+		friends_chat_securitylink {
+			bgcolor=none
+			selectedbgcolor=blue500
+			textcolor=orange500
+			selectedtextcolor=white
+			font-family=basefont
+			font-size=17
+			font-size=18 [$OSX]
+			font-weight=600
+			font-style=none
+		}
+
+		friends_chat_history {
+			selectedbgcolor=blue500
+			textcolor=disabled_OnLightBG
+			selectedtextcolor=white
+			font-size=17
+			font-size=18 [$OSX]
+		}
+
+		friends_offline {
+			textcolor=grey500
+		}
+		
+			friends_offline:hover {
+				textcolor=grey400
+			}
+		
+		friends_online {
+			textcolor=lightblue500
+		}
+		
+			friends_online:hover {
+				textcolor=lightblue300
+			}
+		
+		friends_ingame {
+			textcolor=lightgreen500
+		}
+			
+			friends_ingame:hover {
+				textcolor=lightgreen300
+			}
+
+		friends_golden {
+			textcolor=amber500
+		}
+			
+			friends_golden:hover {
+				textcolor=amber300
+			}
+		
+		friends_ignored {
+			textcolor=red500
+		}
+
+		ProgressBox {
+			minimum-height=128
+			//width is 384
+
+			render {
+				0="fill( x0, y0, x1, y1, custombackgroundprimary)"
+				1="image(x0+91, y0+42, x1, y1, graphics/logo)"
+			}
+		}
+
+		"ProgressBox FrameTitle" {
+			bgcolor=none
+			textcolor=none
+
+			render {}
+			render_bg {}
+		}
+
+		"ProgressBox Button" {
+			textcolor=none
+
+			render_bg {}
+		}
+
+		"ProgressBox FrameCloseButton" {
+			render_bg {
+				0="image(x0+7,y0+7,x1,y1, graphics/icons/window_controls/standard/close_onLightBG)"
+			}
+		}
+
+			"ProgressBox FrameCloseButton:hover" {
+				render_bg {
+					1="image(x0+7,y0+7,x1,y1, graphics/icons/window_controls/hover/close)"
+				}
+			}
+
+			"ProgressBox FrameCloseButton:active" {
+				render_bg {
+					-3="image(x0-7,y0-7,x0+12,y0+12, graphics/material/selectionbubbles/hover/red/topleft)"
+					-2="image(x0-7,y0+12,x0+12,y0+24, graphics/material/selectionbubbles/hover/red/bottomleft)"
+					-1="image(x0+12,y0-7,x0+31,y0+12, graphics/material/selectionbubbles/hover/red/topright)"
+					0="image(x0+12,y0+12,x0+31,y0+31, graphics/material/selectionbubbles/hover/red/bottomright)"
+					1="image(x0+7,y0+7,x1,y1, graphics/icons/window_controls/hover/close)"
+				}
+			}
+
+		"ProgressBox Label" {
+			textcolor=secondaryText_onLightBG
+		}
+	}
+}

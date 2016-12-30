@@ -1,0 +1,135 @@
+"resource/layout/gamespage_details_news_item.layout" {
+	colors {
+		// The extra space needed vertical beyond the autocomputed size of the blurb contents
+		// this is used in code to make the vertical size of the panel fit the title/author/morelink
+		// and should be updated if you change vertical padding/margins/layout.
+		GameDetailsNewsItem.ExtraVerticalSpacing = "76"
+
+		// Override base style rich text x inset inside this control
+		RichText.InsetX = "0"
+		RichText.InsetY = "3" 
+	}
+
+	styles {
+		title_label {
+			textcolor=text_onLightBG
+			font-family=mediumfont
+			font-size=18
+			font-size=19 [$OSX]
+		}
+
+		date_and_author {
+			textcolor=secondaryText_OnLightBG
+			font-size=16
+			font-size=17 [$OSX]
+		}
+
+		newsitem_body {
+			selectedbgcolor=blue500	
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+
+			render_bg {}
+		}
+		
+		"newsitem_body url" {
+			selectedbgcolor=blue500
+			textcolor=blue500
+			selectedtextcolor=white
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=underline
+		}
+		
+			"newsitem_body url:hover" {
+				textcolor=blue400
+			}
+		
+		"newsitem_body bold" {
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			font-weight=600
+		}
+
+		more_link {		 
+			bgcolor=none
+			textcolor=blue500
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=400
+			font-style=uppercase
+			inset-top=3
+			padding-left=6
+			padding-top=4
+			padding-right=6
+			padding-bottom=4
+			
+			render_bg {}
+		}
+
+			more_link:hover {
+				textcolor=blue300
+				
+				render_bg {
+					0="fill(x0,y0,x1,y1, dividers_onLightBG)"
+				}
+			}
+
+			more_link:disabled {
+				bgcolor=none
+				textcolor=disabled_onLightBG
+				
+				render_bg {}
+			}
+
+
+			more_link:focus {
+				bgcolor=none
+				textcolor=blue500
+
+				render_bg {}
+			}
+
+				more_link:focus:hover {
+					bgcolor=none
+					textcolor=blue500
+
+					render_bg {
+						0="fill(x0,y0,x1,y1, dividers_onLightBG)"
+					}
+				}
+
+			more_link:active {
+				bgcolor=blue500transparent
+				textcolor=blue500
+
+				render_bg {}
+			}
+	}
+
+	layout {
+		region {
+			name=body
+			width=max
+			margin=0
+		}
+
+		place {
+			control=newsitem_title,newsitem_dateandauthor,newsitem_body
+			dir=down
+			width=max
+		}
+
+		place {
+			control=newsitem_more
+			start=newsitem_body
+			dir=down
+			y=12
+		}
+	}
+}

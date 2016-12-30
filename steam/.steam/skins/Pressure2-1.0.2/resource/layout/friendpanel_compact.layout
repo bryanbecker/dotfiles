@@ -1,0 +1,46 @@
+"resource/layout/friendpanel_compact.layout" {
+	styles {
+		inviteLinkStyle {
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+			font-style=uppercase
+			padding-left=6
+			padding-top=3
+			padding-right=6
+			padding-bottom=3
+		}
+	
+			inviteLinkStyle:hover {
+				bgcolor=dividers_onLightBG
+			}
+
+		menuButtonStyle {
+			// Hack to hide the down arrow and replace it with the proper one.
+			// There appears to be no other reasonable way to do this, as it will ignore any image defined here.
+			inset="-50 0 0 0"
+
+			render {}
+			render_bg {}
+		}
+
+		nameInstanceStyle {
+			textcolor=grey600
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+	}
+	
+	layout {
+		place {
+			control=MenuButton
+			height=0
+		}
+
+		place {
+			control=ClanStatusImage,NameLabel,FriendsNameInstanceLabel,CompactSeparatorLabel,StatusLabel,GameLabel,AcceptLink,IgnoreLink,BlockLink,SuggestedImage,SuggestedLabel,SuggestedInvite,SuggestedIgnore
+			spacing=4
+		}
+	}
+}

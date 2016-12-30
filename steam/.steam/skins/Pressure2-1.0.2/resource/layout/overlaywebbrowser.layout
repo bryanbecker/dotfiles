@@ -1,0 +1,91 @@
+"steam/cached/overlaywebbrowser.layout" {	
+	styles {
+		TextEntryURL {
+			bgcolor=custombackgroundprimary
+			selectedbgcolor=blue500
+			textcolor=text_onLightBG
+			selectedtextcolor=white
+			shadowtextcolor=disabled_onLightBG
+			font-family=basefont
+			font-size=18
+			font-size=19 [$OSX]
+			font-weight=400
+			inset-left=8
+			inset-top=0
+
+			render {}
+			render_bg {
+				0="fill(x1,y0,x1+25,y1, custombackgroundprimary)"
+			}
+		}
+		
+			TextEntryURL:hover {}
+
+			TextEntryURL:Disabled {
+				textcolor=disabled_onLightBG
+			}
+	}
+	
+	layout {
+		place {
+			control=URLStatusImage,HomeButton,StatusText
+			height=0
+		}
+
+		place {
+			control=frame_captiongrip
+			width=max
+			height=55
+		}
+
+		region {
+			name=subnav
+			y=10
+			width=max
+			height=45
+		}
+
+		region {
+			name=body
+			y=55
+			width=max
+			height=max
+		}
+
+		place {
+			control=HTMLField
+			region=body
+			width=max
+			height=max
+		}	
+
+		place {
+			control=PageLoadThrobber
+			region=subnav
+			align=right
+			height=max
+		}
+		
+		place {
+			control=BackButton,ForwardButton,ReloadButton,StopButton
+			region=subnav
+			align=left
+			x=8
+			width=24
+			height=max
+			spacing=6
+		}
+
+		place {
+			control=EVCert,URLBar
+			region=subnav
+			start=stopbutton
+			align=left
+			width=max
+			height=max
+			margin-left=8
+			spacing=0
+			end-right=PageLoadThrobber
+		}
+	}	
+}

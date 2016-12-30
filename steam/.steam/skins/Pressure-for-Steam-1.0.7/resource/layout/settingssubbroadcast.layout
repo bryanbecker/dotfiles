@@ -1,0 +1,148 @@
+"resource/layout/settingssubbroadcast.layout" {
+	styles {}
+	layout {
+		place {
+			control="BroadcastDisabledLabel"
+			margin-left=20
+			margin-top=32
+			margin-right=20
+			width=max
+		}
+
+		place {
+			control="BroadcastDisabledSupportURL"
+			start="BroadcastDisabledLabel"
+			width=max
+			margin-top=10
+			margin-right=20
+			dir=down
+		}
+		place {
+			control="BroadcastStatusHeader"
+			x=18
+			y=21
+			margin-right=43
+			dir=down
+		}
+		place {
+			control="BroadcastStatus"
+			start="BroadcastStatusHeader"
+			margin-left=4
+			dir=right
+		}
+		place {
+			control="BroadcastHelpHeader"
+			start="BroadcastStatusHeader"
+			y=4
+			dir=down
+		}
+		place {
+			control="BroadcastHelpURL"
+			start="BroadcastHelpHeader"
+			margin-left=4
+			dir=right
+		}
+		place {
+			control="Divider1"
+			start="BroadcastHelpHeader"
+			y=16
+			width=max
+			margin-right=43
+			dir=down
+		}
+
+		place {
+			control="PermissionsHeader"
+			start="Divider1"
+			y=16
+			width=max
+			dir=down
+		}
+		place {
+			control="Permissions"
+			start="PermissionsHeader"
+			y=4
+			width=350
+			height=28
+			dir=down
+		}
+		place {
+			control="DimensionsHeader"
+			start="Permissions"
+			y=10
+			width=max
+			dir=down
+		}
+		place {
+			control="Dimensions"
+			start="DimensionsHeader"
+			y=4
+			width=250
+			dir=down
+		}
+		place {
+			control="BitrateLimitHeader"
+			start="Dimensions"
+			y=10
+			width=max
+			dir=down
+		}
+		place {
+			control="BitrateLimit"
+			start="BitrateLimitHeader"
+			y=4
+			width=250
+			dir=down
+		}
+		place {
+			control="EncoderHeader"
+			start="BitrateLimit"
+			y=10
+			width=max
+			dir=down
+		}
+		place {
+			control="EncoderSetting"
+			start="EncoderHeader"
+			y=4
+			width=250
+			dir=down
+		}
+		place {
+			control="ShowChatHeader"
+			start="EncoderSetting"
+			y=10
+			width=max
+			dir=down
+		}
+		place {
+			control="ShowChatCombo"
+			start="ShowChatHeader"
+			y=4
+			width=250
+			dir=down
+		}
+
+		place {
+			control="IncludeDesktop,RecordSystemAudio,RecordMic,EnableHardwareSupport,ShowDebugInfo,ShowReminder"
+			start="ShowChatCombo"
+			y=10
+			spacing=-4
+			dir=down
+		}
+		place {
+			control="ConfigMic"
+			start="RecordMic"
+			y=6
+			margin-left=4
+			dir=right
+		}
+
+		place {
+			control="RequiresRestartLabel"
+			start="RecordMic"
+			width=max
+			y=10
+		}
+	}
+}

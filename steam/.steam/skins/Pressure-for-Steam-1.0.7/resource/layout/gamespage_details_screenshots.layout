@@ -1,0 +1,54 @@
+"resource/layout/gamespage_details_screenshots.layout" {
+	colors {
+		// Extra spacing beyond the flowing elements to account for header and button at the bottom
+		GameDetailsScreenshots.ExtraVerticalSpacing "110"
+		RichText.InsetX "0"
+		RichText.InsetY "3"
+	}
+	styles {
+		// This overrides the default button.
+		button {
+			textcolor=blue
+			padding=0
+
+			render_bg {
+				0="image(x1-5, y1-14, x1, y1-10, graphics/details_button)"
+			}
+		}
+
+			button:hover {
+				textcolor=lightestBlue
+			}
+		screenshotsdetails {
+			bgcolor=black65
+		}
+	}
+	layout {
+		region {
+			name=body
+			width=max
+			height=max
+			margin=20
+		}
+		place {
+			control=headerlabel
+			region=body
+			width=max
+		}
+
+		place {
+			control=screenshotsarea
+			region=body
+			y=35
+			width=max
+			dir=down
+		}
+		place {
+			control=viewall
+			region=body
+			align=bottom
+			margin-left=-6
+			margin-bottom=0
+		}
+	}
+}

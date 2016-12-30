@@ -1,0 +1,36 @@
+"resource/layout/overlay_achievement_item.layout" {
+	styles {
+		label {
+			textcolor=secondarytext_onDarkBG
+			font-family=mediumfont
+			font-size=18
+			font-size=19 [$OSX]
+		}
+		name {
+			textcolor=text_onDarkBG
+			font-family=basefont
+			font-size=18
+			font-size=19 [$OSX]
+		}
+	
+	}
+
+	layout {
+		place {
+			control=icon
+			x=0
+			y=0
+			width=64
+			height=64
+		}
+
+		place {
+			control=caption,name
+			dir=down
+			x=80
+			y=13
+			width=max
+			spacing=2
+		}
+	}
+}

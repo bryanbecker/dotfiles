@@ -1,0 +1,140 @@
+"resource/layout/settingssubmusic.layout" {
+	styles {
+		ListPanelColumnheader [!$OSX] {
+			bgcolor="none"
+			textcolor= "white"
+			font-family=semibold
+			font-size=14
+			font-weight=400
+			font-style="regular,normal"
+			inset= "0 0 0 0"
+			minimum-height=0
+
+			render {}
+			render_bg {}
+		}
+	}
+	layout {
+		place {
+			control=LibraryHeader
+			x=18
+			y=21
+			width=max
+			margin-right=43
+			dir=down
+		}
+
+		place {
+			control=LibraryList
+			start=LibraryHeader
+			y=4
+			width=max
+			height=80
+			margin-right=43
+			dir=down
+		}
+		place {
+			control=AddLibraryButton
+			start=LibraryList
+			y=8
+			width=90
+			dir=down
+		}
+
+		place {
+			control=RemoveLibraryButton,StartCrawlingButton
+			start=AddLibraryButton
+			width=90
+			x=8
+			dir=right
+			spacing=8
+		}
+		place {
+			control=LibraryDivider
+			start=AddLibraryButton
+			y=16
+			width=max
+			margin-right=43
+			dir=down
+		}
+		place {
+			control=DatabaseInfoLabel
+			start=LibraryDivider
+			y=16
+			dir=down
+		}
+
+		place {
+			control=DatabaseCrawlAtStartup,DatabaseCrawlSteamInstallFolders,EnableMediaKeysCheckbox
+			start=DatabaseInfoLabel
+			y=8
+			dir=down
+			spacing=-4
+		}
+
+		place {
+			control=ResetDatabaseButton
+			start=EnableMediaKeysCheckbox
+			width=340
+			y=8
+			dir=down
+		}
+		place {
+			control=DatabaseDivider
+			start=ResetDatabaseButton
+			y=16
+			width=max
+			margin-right=43
+			dir=down
+		}
+		place {
+			control=PauseMusicHeader
+			start=DatabaseDivider
+			y=16
+			dir=down
+		}
+
+		place {
+			control=PauseMusicWhenStartingApplicationCheckbox,PauseMusicWhenVoiceChatCheckbox
+			start=PauseMusicHeader
+			y=0
+			dir=down
+			spacing=-4
+		}
+
+		place {
+			control=NotificationHeader
+			start=PauseMusicWhenVoiceChatCheckbox
+			y=16
+			dir=down
+		}
+
+		place {
+			control=NotificationPlaylistNowPlayingCheckbox
+			start=NotificationHeader
+			y=0
+			dir=down
+		}
+		place {
+			control=LoggingHeader
+			start=DatabaseDivider
+			x=240
+			y=16
+			dir=down
+		}
+
+		place {
+			control=LoggingCrawlingCheckbox
+			start=LoggingHeader
+			y=0
+			dir=down
+		}
+		place {
+			control=DatabaseHeader,VolumeHeader,VolumeSlider,VolumeDivider
+			start=NotificationPlaylistNowPlayingCheckbox
+			width=0
+			height=0
+			y=90
+		}
+	}
+}

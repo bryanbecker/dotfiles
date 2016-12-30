@@ -1,0 +1,50 @@
+"resource/layout/overlaydialogsettings.layout" {
+	layout {
+		place {
+			control=frame_title
+			visible=0
+			height=0
+		}
+
+		place {
+			control=frame_captiongrip
+			margin=0
+			width=max
+			height=55
+		}
+		
+		place {
+			control=frame_minimize,frame_maximize,frame_close
+			align=right
+			margin-top=16
+			margin-right=15
+			spacing=1
+		}
+
+		region {
+			name=buttons
+			align=bottom
+			width=max
+			height=58
+		}
+
+		place {
+			control=sheet
+			y=17
+			height=max
+			width=max
+			margin-bottom=58
+		}
+
+		place {
+			control=OKButton,CancelButton
+			region=buttons
+			align=right
+			width=92
+			height=34
+			margin-top=12
+			margin-right=11
+			spacing=12
+		}
+	}
+}

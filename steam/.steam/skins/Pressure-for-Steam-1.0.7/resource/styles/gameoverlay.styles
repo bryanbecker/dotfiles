@@ -1,0 +1,28 @@
+gameoverlay.styles {
+	include "resource/styles/steam.styles"
+
+	colors {
+		mostly_black "41 41 41 240"
+		semi_black "20 20 20 128"
+		semi_gray "20 20 20 220"
+		// Notification Hacks
+		notificationDarkestGrey="0 0 0 180"
+		notificationGrey="0 0 0 180"
+		notificationLightGreyEnd="0 0 0 180"
+		notificationDarkGreyEnd="0 0 0 180"
+		notificationLighterGrey="0 0 0 180"
+		notificationHighlight="0 0 0 180"
+	}
+
+	styles {
+		detailsbox {
+			render_bg {}
+		}
+
+		detailsboxtitle {
+			textcolor=white
+			font-size=28
+			font-style=regular
+		}
+	}
+}

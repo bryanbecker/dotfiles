@@ -1,0 +1,120 @@
+"resource/layout/cloud_conflict_dialog.layout" {
+	styles {
+		arrows {}
+
+		CSyncConflictDialog {
+			render {
+				0="fill(x0,y1-58,x1,y1-57, dividers_onLightBG)"
+			}
+
+			render_bg {
+				0="image(x0+24,y0+58,x1,y1, graphics/icons/caution/caution)"
+				1="image(x0+24,y0+144,x1,y1, graphics/icons/downloadcloud/downloadcloud)"
+				2="image(x0+24,y0+264,x1,y1, graphics/icons/uploadpc/uploadpc)"
+			}
+		}
+
+		intro {
+			textcolor=text_onLightBG
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+			font-weight=700
+		}
+
+		bold {
+			textcolor=text_onLightBG
+			font-family=mediumfont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+
+		text {
+			textcolor=secondaryText_onLightBG
+		}
+	}
+	
+	layout {
+		place {
+			control=TextCancelNote,BottomDivider,UploadIcon,DownloadIcon,WarningIcon,LocalFilesIcon,CloudFilesIcon,TopDivider
+			height=0
+		}
+
+		place { 
+			controls=TextIntro
+			x=86
+			y=58
+			width=max
+			margin-right=24
+		}
+
+		place {
+			control=TextCloudFiles
+			x=126
+			y=144
+			width=max
+			margin-right=24
+		}
+
+		place {
+			control=TextCloudFilesTime
+			start=TextCloudFiles
+			dir=down
+			y=4
+			width=max
+			margin-right=24
+		}
+
+		place {
+			control=AcceptRemoteButton
+			start=TextCloudFilesTime
+			dir=down
+			y=4
+			width=300
+			height=34
+		}
+		
+		place {
+			control=TextLocalFiles
+			x=126
+			y=264
+			width=max
+			margin-right=24
+		}
+
+		place {
+			control=TextLocalFilesTime
+			start=TextLocalFiles
+			dir=down
+			y=4
+			width=max
+			margin-right=24
+		}
+
+		place {
+			control=AcceptLocalButton
+			start=TextLocalFilesTime
+			dir=down
+			y=4
+			width=300
+			height=34
+		}
+
+		region {
+			name=buttons
+			align=bottom
+			width=max
+			height=58
+		}
+
+		place {
+			control=OKButton,CancelButton
+			region=buttons
+			align=right
+			height=34
+			margin-top=12
+			margin-right=11
+			spacing=12
+		}
+	}
+}

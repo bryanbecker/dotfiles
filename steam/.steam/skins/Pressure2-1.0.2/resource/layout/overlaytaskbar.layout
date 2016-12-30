@@ -1,0 +1,50 @@
+"resource/layout/overlaytaskbar.layout" {
+	styles {
+		view_friends {}
+		online_friends {}
+
+		taskbar {
+			textcolor=blue300
+			font-family=mediumfont
+			font-weight=800
+			font-size=18
+			font-size=19 [$OSX]
+			font-style=uppercase
+		}
+		
+			taskbar:hover {
+				textcolor=blue200
+			}
+	}
+	
+	layout {
+		place {
+			control=SteamLogo,FriendPanel,view_friends,online_friends
+			height=0
+		}
+
+		region {
+			name=taskbar
+			align=top-center
+			width=400
+			height=100
+		}
+		
+		place {
+			control=TaskbarPanel
+			region=bottom
+			width=max
+			height=64
+			margin-bottom=37
+		}
+
+		place {
+			controls=WebBrowserButton,MusicPlayerButton,SettingsButton,ScreenshotsButton
+			region=taskbar
+			align=top-center
+			dir=down
+			margin-top=-3
+			spacing=3
+		}
+	}	
+}

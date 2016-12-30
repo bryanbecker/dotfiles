@@ -1,0 +1,8 @@
+"fonts.styles" {
+	colors {
+		basefont = "Roboto"
+		basefont = "Roboto Regular" [$OSX]
+		mediumfont = "Roboto Medium"
+		heavyfont = "Roboto Bold"
+	}
+}

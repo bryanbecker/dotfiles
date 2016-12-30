@@ -1,0 +1,34 @@
+"resource/layout/app_validation_dialog.layout" {
+	layout {
+		place {
+			controls=Label1
+			x=21
+			y=60
+			width=320
+			height=48
+		}
+
+		place {
+			controls=ProgressBar1
+			x=20
+			y=105
+			width=320
+			height=24
+		}
+
+		region {
+			name=bottom
+			align=bottom
+			height=51
+		}
+
+		place {
+			controls=Button1
+			height=24
+			region=bottom
+			align=right
+			margin-top=14
+			margin-right=14
+		}
+	}
+}

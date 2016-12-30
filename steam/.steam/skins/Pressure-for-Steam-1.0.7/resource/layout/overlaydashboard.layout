@@ -1,0 +1,106 @@
+"resource/layout/overlaydashboard.layout" {
+	styles {
+		topfade {
+			render_bg {
+				0="fill( x0, y0, x1, y1, black75)"
+			}
+		}
+		bottomfade {
+			render_bg {
+				0="fill( x0, y0, x1, y1, black75)"
+			}
+		}
+		hotkey {
+			textcolor=none
+			font-size=15
+font-size=14 [$LINUX]
+			font-style=none
+		}
+		topbar {
+			textcolor=white
+			font-family=headerfont
+			font-size=48
+			render_bg {}
+		}
+		detailsboxtitle {
+			textcolor=red
+		}
+		OverlayURLLabel {
+			image=graphics/overlay/close
+		}
+			OverlayURLLabel:hover {
+				image=graphics/overlay/close_hover
+			}
+		LabelOverlay {
+			image=graphics/overlay/browsersettingsmusic
+		}
+	}
+	layout {
+		region {
+			name=overlay
+			align=top-center
+			width=max
+		}
+		region {
+			name="topbar"
+			region=overlay
+			align=top-center
+			width="max"
+			height=112
+		}
+		region {
+			name="taskbar"
+			region=overlay
+			align=bottom
+			width="max"
+			height=146
+		}
+		place {
+			control="TopFadePanel"
+			align=top
+			width=max
+			height=112
+		}
+		place {
+			control="BottomFadePanel"
+			align=bottom
+			width=max
+			height=146
+		}
+		place {
+			controls="gamename"
+			region=topbar
+			align=left
+			y=8
+			x=16
+		}
+		place {
+			control="CloseButton"
+			region=topbar
+			align=right
+			y=36
+			margin-right=39 // There is a 3px weirdness offset. This accounts for that.
+		}
+		// Used for the icons
+		place {
+			control=HotkeyExplain
+			region=taskbar
+			align=right
+			margin-right=48 // There is 2 pixels on the left of the image that we need to account for
+			dir=right
+			y=46
+		}
+		place {
+			control="TaskbarPanel"
+			region=taskbar
+			align=right
+			width=480
+			height=145
+		}
+		place {
+			control="HotkeyLabel,powermeter,PowerMeterDim"
+			width=0
+			height=0
+		}
+	}
+}

@@ -1,0 +1,303 @@
+"resource/layout/musicplayerpanel.layout" {
+	styles {
+		TrackListStyle {}
+
+		CMusicPlayerPanel {
+			minimum-width=349
+			minimum-height=193
+			
+			render_bg {}
+		}		
+		
+		MusicListPanelInterior {
+			bgcolor=custombackgroundprimary
+			textcolor=text_onLightBG
+			font-size=15
+			font-size=16 [$OSX]
+			inset-top=-1
+			
+			render {}
+			render_bg {}
+		} 
+	
+		ClientTitle {
+			textcolor=none		
+		}
+
+		CurrentAlbumImageStyle {
+			render {}
+			render_bg {
+				0="image(x0,y0,x1,y1, graphics/music_placeholder_small)"
+			}
+		}
+
+		StatusStyle	{
+			textcolor=text_onLightBG
+			font-family=mediumfont
+			font-size=15
+			font-size=16 [$OSX]
+		}
+
+		PlayButtonStyle {
+			inset-left=0
+			image=graphics/icons/playmusic/standard/playmusic
+
+			render_bg {}
+		}
+
+			PlayButtonStyle:hover {
+				image=graphics/icons/playmusic/hover/playmusic
+			}
+
+			PlayButtonStyle:active {
+				image=graphics/icons/playmusic/active/playmusic
+			}
+
+			PlayButtonStyle:focus {
+				render_bg {}
+			}
+
+		PauseButtonStyle {
+			inset-left=0
+			image=graphics/icons/pausemusic/standard/pausemusic
+
+			render_bg {}
+		}
+
+			PauseButtonStyle:hover {
+				image=graphics/icons/pausemusic/hover/pausemusic
+			}
+
+			PauseButtonStyle:active {
+				image=graphics/icons/pausemusic/active/pausemusic
+			}
+
+			PauseButtonStyle:focus {
+				render_bg {}
+			}
+
+		RepeatButtonStyle {
+			inset-left=0
+			image=graphics/icons/repeatall/standard/repeatall
+
+			render_bg {}
+		}
+
+			RepeatButtonStyle:hover {
+				image=graphics/icons/repeatall/hover/repeatall
+			}
+
+			RepeatButtonStyle:selected {
+				image=graphics/icons/repeatall/active/repeatall
+			}
+
+		RepeatOnceButtonStyle {
+			inset-left=0
+			image=graphics/icons/repeatone/standard/repeatone
+
+			render_bg {}
+		}
+
+			RepeatOnceButtonStyle:hover {
+				image=graphics/icons/repeatone/hover/repeatone
+			}
+
+			RepeatOnceButtonStyle:selected {
+				image=graphics/icons/repeatone/active/repeatone
+			}
+
+		ShuffleButtonStyle {
+			inset-left=0
+			image=graphics/icons/shuffle/standard/shuffle
+
+			render_bg {}
+		}
+
+			ShuffleButtonStyle:hover {
+				image=graphics/icons/shuffle/hover/shuffle
+			}
+
+			ShuffleButtonStyle:selected {
+				image=graphics/icons/shuffle/active/shuffle
+			}
+
+		BrowseButtonStyle {
+			inset-left=0
+			image=graphics/icons/musiclibrary/standard/musiclibrary
+
+			render_bg {}
+		}
+
+			BrowseButtonStyle:hover {
+				image=graphics/icons/musiclibrary/hover/musiclibrary
+			}
+
+			BrowseButtonStyle:active {
+				image=graphics/icons/musiclibrary/active/musiclibrary
+			}
+
+		PreviousButtonStyle {
+			inset-left=0
+			image=graphics/icons/previous/standard/previous
+
+			render_bg {}
+		}
+
+			PreviousButtonStyle:hover {
+				image=graphics/icons/previous/hover/previous
+			}
+
+		NextButtonStyle {
+			inset-left=0
+			image=graphics/icons/forward/standard/forward
+
+			render_bg {}
+		}
+
+			NextButtonStyle:hover {
+				image=graphics/icons/forward/hover/forward
+			}
+
+		VolumeButtonStyle {
+			inset-left=0
+			image=graphics/icons/volume/standard/volume
+
+			render_bg {}
+		}
+
+			VolumeButtonStyle:hover {
+				image=graphics/icons/volume/hover/volume
+			}
+
+			VolumeButtonStyle:active {
+				image=graphics/icons/volume/active/volume
+			}
+
+		VolumeButtonActiveStyle {
+			inset-left=0
+			image=graphics/icons/volume/active/volume
+
+			render_bg {}
+		}
+
+			VolumeButtonActiveStyle:hover {
+				image=graphics/icons/volume/active/volume
+			}
+
+			VolumeButtonActiveStyle:active {
+				image=graphics/icons/volume/active/volume
+			}
+
+		MuteVolumeButtonStyle {
+			inset-left=0
+			image=graphics/icons/volume/standard/mute
+
+			render_bg {}
+		}
+
+			MuteVolumeButtonStyle:hover {
+				image=graphics/icons/volume/hover/mute
+			}
+
+			MuteVolumeButtonStyle:active {
+				image=graphics/icons/volume/active/mute
+			}
+
+		MuteVolumeButtonActiveStyle {
+			inset-left=0
+			image=graphics/icons/volume/active/mute
+
+			render_bg {}
+		}
+
+			MuteVolumeButtonActiveStyle:hover {
+				image=graphics/icons/volume/active/mute
+			}
+
+			MuteVolumeButtonActiveStyle:active {
+				image=graphics/icons/volume/active/mute
+			}
+
+		StatusStyleDim {
+			textcolor=disabled_onLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+		}
+
+		InfoLabelStyle {
+			textcolor=disabled_onLightBG
+			font-family=basefont
+			font-size=15
+			font-size=16 [$OSX]
+		}
+
+		NoTracksLabelStyle	{
+			render {}
+			render_bg {}
+		}
+		
+		SeekBarStyle {
+			bgcolor=none
+			font-family=basefont
+			font-size=16
+			font-size=17 [$OSX]
+		}
+	}
+	
+	
+	layout {
+		place {
+			control=CurrentStatusLabel
+			height=0
+		}
+
+		place {
+			control=CurrentAlbumImage
+			x=1
+			y=35
+			width=86
+			height=86
+		}
+
+		place {
+			control=CurrentTrackLabel,CurrentArtistLabel,InfoLabel
+			dir=down
+			x=94
+			y=56
+			spacing=2
+		}
+
+		place {
+			control=SeekBar
+			x=24
+			y=168
+			width=max
+			height=18
+			margin-right=24
+		}
+
+		place {
+			control=ShuffleButton,RepeatButton,PreviousButton,PlayPauseButton,NextButton,VolumeButton,BrowseButton
+			align=top-center
+			dir=right
+			y=132
+			width=34
+			height=34
+			spacing=16
+		}		
+
+		place {
+			control=NoTracksLabel
+			align=top-center
+			y=124
+		}
+
+		place {
+			control=TrackList
+			y=193
+			width=max
+			height=max
+		}
+	}	
+}

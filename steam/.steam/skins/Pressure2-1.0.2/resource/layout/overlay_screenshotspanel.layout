@@ -1,0 +1,73 @@
+"resource/layout/overlay_screenshotspanel.layout" {
+	styles {
+		DarkRegion {}
+		PreviewImage {}
+
+		Button {
+			textcolor=lightblue300
+			font-family=mediumfont
+			font-weight=800
+			font-size=20
+			font-size=21 [$OSX]
+			font-weight=400
+			font-style=normal
+			padding-left=57
+			padding-top=0
+			inset-left=-6
+			inset-top=-18
+
+			render_bg {}			
+		}
+
+			button:hover {
+				textcolor=lightblue200
+			}
+
+			button:selected {
+				bgcolor=none
+			}
+
+			button:active {
+				bgcolor=none
+			}
+
+		detailsbox {
+			render_bg {
+				0="image(x0,y0+2,x1,y1, graphics/overlay/buttons/screenshots)"
+			}
+		}
+
+		highlight {
+			textcolor=text_onDarkBG
+			font-size=17
+			font-size=18 [$OSX]
+		}
+	}
+	
+	layout {
+		place {
+			control=TitleText,SetShortcut
+			height=0
+		}
+
+		region {
+			name=actions
+			width=max
+			height=max
+		}
+
+		place {
+			control=InstructionText
+			region=actions
+			x=57
+			y=23
+		}
+
+		place {
+			control=ViewScreenshots
+			region=actions
+			width=max
+			height=max
+		}
+	}
+}

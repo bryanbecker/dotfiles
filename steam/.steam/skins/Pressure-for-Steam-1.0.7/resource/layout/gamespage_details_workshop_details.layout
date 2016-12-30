@@ -1,0 +1,39 @@
+"resource/layout/gamespage_details_workshop_details.layout" {
+	colors {
+		WorkshopDetailsPanel.ExtraVerticalSpacing "130"
+		WorkshopDetailsPanel.ExtraHorizontalSpacing "183"
+		RichText.InsetX "2"
+		RichText.InsetY "2"
+	}
+
+	styles {
+		workshop_description {
+			selectedtextcolor="white"
+			textcolor="white"
+			font-size=15
+font-size=14 [$LINUX]
+			font-family=basefont
+			render_bg {}
+		}
+	}
+	layout {
+		place {
+			control=workshop_description
+			region=body
+			x=0
+			y=0
+			width=0
+			height=0
+		}
+
+		place {
+			control=workshop_banner
+			region=body
+			align=left
+			x=1
+			y=0
+			width=200
+			height=52
+		}
+	}
+}

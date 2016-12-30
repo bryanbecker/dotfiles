@@ -1,0 +1,27 @@
+"resource/layout/gamespage_details_gametitleheader.layout" {
+	styles {
+		CDetailsGameTitleHeaderPanel {}
+
+		headertextlarge {
+			bgcolor=none
+			textcolor=white
+			font-family=basefont
+			font-size=60
+			font-size=61 [$OSX]
+			font-weight=400
+		}
+	}
+
+	layout {
+		place {
+			control=iconimage
+			width=0
+			height=0
+		}
+
+		place {
+			control=gametitlelabel
+			align=bottom
+		}
+	}
+}
