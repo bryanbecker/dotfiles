@@ -1,0 +1,6 @@
+always-display-description true
+browser elinks
+refresh-on-startup yes
+proxy 127.0.0.1:8032
+proxy-type socks5
+use-proxy no
