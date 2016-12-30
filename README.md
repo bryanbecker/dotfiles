@@ -7,3 +7,7 @@ install with GNUstow*
 - `cd` into the repository and run `stow stow` to install the ignore files
 
 
+## Individual Package Information:
+
+- [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for plugins and themes
+
