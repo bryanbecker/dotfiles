@@ -32,6 +32,10 @@ install with GNUstow*
 - Vim is installed with `sudo apt-get install vim-gtk`.  Install [ Vundle ](https://github.com/VundleVim/Vundle.vim) first for the rc file to work
 - Terminal is [ Termite ](https://github.com/thestinger/termite/).  For ubuntu users, this [this script](https://github.com/xiouy/termite-install_ubuntu16.04.1) to compile easily
 - Launcher is [Rofi](https://davedavenport.github.io/rofi/)
+- Gui Theming:
+  - GTK Theme: [Arc Dark](https://github.com/horst3180/arc-theme)
+  - Icons: [Xenlism Wildfire](http://xenlism.github.io/wildfire/)
+  - Cursor: [Breeze Hacked](https://www.gnome-look.org/content/show.php/Breeze+Serie?content=169316)
 - Firefox is installed with the following add-ons:
   - Stylish
     - [ Twily's Powerline Firefox CSS ]( https://userstyles.org/styles/102262/twily-s-powerline-firefox-css )
