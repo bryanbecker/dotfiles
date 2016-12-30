@@ -1,0 +1,9 @@
+[Unit]
+Description=Automatically rotate desktop backgrounds
+
+[Timer]
+OnUnitActiveSec=20min
+OnBootSec=20min
+
+[Install]
+WantedBy=timers.target

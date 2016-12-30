@@ -1,0 +1,11 @@
+[Unit]
+Description=Autolocks the screen after inactivity
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xautolock
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target

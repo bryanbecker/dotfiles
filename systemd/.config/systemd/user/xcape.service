@@ -1,0 +1,11 @@
+[Unit]
+Description=Run xcape
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xcape -e 'Control_L=Escape' &
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

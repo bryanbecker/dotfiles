@@ -1,0 +1,9 @@
+[Unit]
+Description=Automatically change background images
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/feh --randomize --recursive --big-fill /home/bryan/Pictures/backgrounds/*
+
+[Install]
+WantedBy=graphical.target

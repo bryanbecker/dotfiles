@@ -1,0 +1,12 @@
+[Unit]
+Description=Simple X Hotkey Daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/sxhkd &
+ExecReload=/usr/bin/pkill -USR1 -x sxhkd
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

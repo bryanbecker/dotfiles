@@ -1,0 +1,11 @@
+[Unit]
+Description=Starts Compton compositor
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/compton -f -b
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
