@@ -1,0 +1,92 @@
+[options]
+resize_grip = false
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Sauce Code Powerline 12
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = on
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+#browser = firefox
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+
+# set size hints for the window
+#size_hints = false
+
+# emit escape sequences for other keys modified by Control
+#modify_other_keys = false
+
+#http://stayradiated.github.io/termcolors-web/
+# Converted Molokai
+[colors]
+
+# special
+foreground      = #bcbcbc
+foreground_bold = #bcbcbc
+cursor          = #bcbcbc
+background      = #1c1c1c
+
+# black
+color0  = #000000
+#color8  = #232526
+color8  = #161819
+
+# red
+color1  = #ff5c97
+color9  = #ff005f
+
+# green
+color2  = #a6e22e
+color10 = #ccff66
+
+# yellow
+color3  = #e6db74
+color11 = #fff381
+
+# blue
+color4  = #107bcc
+color12 = #87afff
+
+# magenta
+color5  = #8c60db
+color13 = #ae81ff
+
+# cyan
+color6  = #66d9ef
+color14 = #80ebff
+
+# white
+color7  = #7e8e91
+color15 = #4e4e4e
+
+
+[hints]
+    foreground = #55FFFF
+
+    #font = Sauce Code Powerline 9
+    #foreground = #dcdccc
+    #background = #3f3f3f
+    #padding = 2
+    #border = #3f3f3f
+    #border_width = 0.5
+    #roundness = 2.0
+
+; vim:ft=dosini
