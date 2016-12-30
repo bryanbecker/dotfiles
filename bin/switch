@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if setxkbmap -query | grep dvorak -q ; then
+  # switch to US
+  setxkbmap us
+else
+  # switch to Dvorak
+  setxkbmap -variant dvorak
+fi

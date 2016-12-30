@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if setxkbmap -query | grep dvorak -q ; then
+  printf '%s' 'DV'
+else
+  printf '%s' 'US'
+fi

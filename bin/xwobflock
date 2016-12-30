@@ -1,0 +1,23 @@
+#!/bin/bash
+# https://github.com/olzraiti/dotfiles/blob/master/bin/xwobflock
+
+tempbg="/tmp/.i3lock.png"
+# lockimage="$HOME/src/repos/i3lock-fancy/icons/circlelockcleardark.png"
+
+PARAMS="--textcolor=ffffffff --insidecolor=ffffff1c --ringcolor=bcbcbc99 --linecolor=ffffffff --keyhlcolor=24e03199 --bshlcolor=ff005f99 --ringvercolor=00000000 --separatorcolor=22222260 --insidevercolor=0000001c --ringwrongcolor=ff5c9755 --insidewrongcolor=0000001c"
+
+killall -SIGUSR1 dunst # pause dunst
+
+scrot $tempbg
+# i3lock -e -i $tempbg
+
+xwobf $tempbg
+# convert $tempbg -gravity center $lockimage -composite $tempbg
+# convert $tempbg $lockimage -gravity center -composite $tempbg
+
+# kill $(pgrep i3lock)
+i3lock -e ${PARAMS} -i $tempbg
+
+wait_for i3lock
+
+killall -SIGUSR2 dunst # resume dunst
