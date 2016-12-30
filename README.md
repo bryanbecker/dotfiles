@@ -2,7 +2,7 @@
 install with GNUstow*
 
 
-## *Dot! Dot!*
+# *Dot! Dot!*
 ▒▒▒░░░░░░░░░░▄▐░░░░  
 ▒░░░░░░▄▄▄░░▄██▄░░░  
 ░░░░░░▐▀█▀▌░░░░▀█▄░  
@@ -19,6 +19,15 @@ install with GNUstow*
 ░░░░░░░▐▀░░░░░░▐▌░░  
 ░░░░░░░█░░░░░░░░█░░  
 ░░░░░░▐▌░░░░░░░░░█░  
+
+# TODO:
+
+- [ ] Add Polybar configs
+- [ ] Add Spacemacs configs
+- [ ] Add lightdm theme
+- [ ] Add keyboard configs
+
+
 
 ## Install
 
@@ -45,4 +54,14 @@ install with GNUstow*
   - Greasemonkey
   - uBlock Origin
   - Vimperator
+  
+## Other Cool Software
+- **xcape** for adding extra functionality to modifier keys (`ctrl` as `esc` when pressed alone)
+- **thefuck**
+- **tldr**
+- **asdf**
+- **glances**
+- **pass**
+- **i3lock-color**
+- **xdo**
 
