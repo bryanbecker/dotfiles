@@ -1,0 +1,90 @@
+directory: ~/music/library
+library: ~/music/meta/musiclibrary.db
+
+# used when for `beet ls` output
+#format_item: $artist - $album - $title
+format_item: $artist - $title
+
+import:
+  move: yes
+  write: yes
+  resume: ask
+  languages: en zh-cn zh
+  # below option set to "yes" actually means "don't group albums based on directory structure"
+  group-albums: yes
+  quiet_fallback: asis
+  default_action: asis
+  detail: yes
+
+match:
+  strong_rec_thresh: 0.04
+  preferred:
+    countries: ['US', 'GB|UK', 'CN']
+    original_year: yes
+
+# these are used by first matching (excluding default)
+paths:
+  default: $albumartist/$album$aunique{}/$track $title
+  singleton:true: $artist/$title
+  # path for compilation albums:
+  #comp:
+  # can also add paths based on queries, ex:
+  #albumtype:soundtrack: Soundtracks/$album/$track $title
+
+plugins: chroma fromfilename edit embedart fetchart mpdstats duplicates mpdupdate smartplaylist types rewrite ftintitle info convert
+
+# int, float, bool, date
+#types:
+#  rating: int
+
+convert:
+  copy-album-art: yes
+
+chroma:
+  auto: yes
+
+embedart:
+  auto: yes
+  compare_threshold: 80
+  remove_art_file: yes
+
+# has so many more fields to configure
+fetchart:
+  auto: yes
+
+mpdstats:
+  host: 127.0.0.1
+  port: 6600
+  rating: yes
+  rating_mix: 0.75
+
+mpdupdate:
+  host: 127.0.0.1
+  port: 6600
+
+duplicates:
+  checksum: ffmpeg -i {file} -f crc -
+  delete: yes
+  merge: true
+  tiebreak:
+    items: [bitrate]
+
+smartplaylist:
+  relative_to: ~/music/library
+  playlist_dir: ~/music/playlists
+  playlists:
+    - name: 'all.m4u'
+      query: ''
+    - name: 'Nyan.m4u'
+      query: 'source:nyan'
+
+# doesn't seem to be for linux
+#keyfinder:
+  #auto: yes
+
+ftintitle:
+  auto: yes
+  format: (feat. {0})
+
+rewrite:
+  artist filous: Filous
