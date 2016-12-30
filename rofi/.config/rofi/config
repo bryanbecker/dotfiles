@@ -1,0 +1,43 @@
+!
+! Rofi configuration
+!
+!rofi.fullscreen: true
+rofi.padding: 10
+rofi.modi: run,drun,ssh,window
+rofi.width: 25
+rofi.levenshtein-sort: true
+rofi.sidebar-mode: true
+
+
+! none, dash, solid
+rofi.separator-style: dash
+
+
+
+rofi.font: Anonymous Pro, Regular, 12
+
+rofi.color-enabled: true
+!rofi.color-normal: argb:ffffffff , #353535 , argb:ffffffff , #ff372c , #1b2b34
+!rofi.color-urgent: argb:ffffffff , #ff372c , argb:ffffffff , #ff372c , #1b2b34
+!rofi.color-active: argb:ffffffff , #6699cc , argb:ffffffff , #6699cc , #1b2b34
+!rofi.color-window: argb:ffffffff
+rofi.color-normal: argb:d51d2a30, #71c2af, argb:ff1d2a30, #aa4450, #ffffff
+rofi.color-normal: argb:001d2a30, #71c2af, argb:001d2a30, #aa4450, #ffffff
+rofi.color-window: argb:d51d2a30, argb:d51d2a30
+rofi.hide-scrollbar: true
+
+rofi.kb-remove-word-back: Control+w
+rofi.kb-row-up: Up,Control+n,Control+k
+rofi.kb-row-down: Down,Control+p,Control+j
+! rofi.kb-accept-entry: Tab,Control+m,Return,KP_Enter
+rofi.kb-accept-entry: Control+m,Return,KP_Enter
+rofi.kb-remove-to-eol: Control+d
+rofi.kb-mode-next: Control+r,Shift+Right,Tab
+rofi.kb-row-tab: 
+
+!rofi.terminal: zsh
+rofi.terminal: termite
+rofi.ssh-command:          {terminal} -e "{ssh-client} {host}"
+!rofi.tokenize: false
+
+! vim:ft=xdefaults
