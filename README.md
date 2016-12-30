@@ -10,4 +10,11 @@ install with GNUstow*
 ## Individual Package Information:
 
 - [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for plugins and themes
+- Firefox is installed with the following add-ons:
+  - Stylish
+    - [ Twily's Powerline Firefox CSS ]( https://userstyles.org/styles/102262/twily-s-powerline-firefox-css )
+    - [ Nyan Cat progress bar video player theme ]( https://userstyles.org/styles/95033/youtube-nyan-cat-progress-bar-video-player-theme) - absoluted mandatory!
+  - Greasemonkey
+  - uBlock Origin
+  - Vimperator
 
