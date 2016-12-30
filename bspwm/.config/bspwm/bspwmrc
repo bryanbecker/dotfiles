@@ -1,0 +1,43 @@
+#! /bin/sh
+
+# sxhkd &
+
+# start polybar
+$HOME/.config/polybar/launch.sh
+
+# set background
+# --bg-tile, --bg-center, --bg-max, --bg-fill
+# feh --bg-center picture.jpg
+# feh --randomize --recursive --bg-fill $HOME/Pictures/backgrounds/*
+
+# feh --no-fehbg --bg-fill '/home/bryan/Pictures/backgrounds/Dawn_by_Grigant.jpeg' '/home/bryan/Pictures/backgrounds/Colors.png' '/home/bryan/Pictures/backgrounds/absurdwordpreferred.deviantart.com/45_degrees_by_absurdwordpreferred-d589ocg.jpg' 
+feh --no-fehbg --bg-fill '/home/bryan/Pictures/backgrounds/glitch/wallhaven-365682.png'
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-1-1 -d I II III IV # dell
+bspc monitor HDMI-1-2 -d V VI VII # HKC
+bspc monitor eDP-1-1 -d VIII IX X
+
+for desktop in $(bspc query -D); do
+  bspc config -d $desktop border_width         4;
+  bspc config -d $desktop window_gap          18; #default 12
+done
+
+for desktop in $(bspc query -m HDMI-1-2 -D); do
+  bspc config -d $desktop top_padding 22;
+done
+
+bspc config split_ratio          0.52
+#bspc config split_ratio          0.60
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+#bspc config focus_follows_pointer true
+#bspc config pointer_follows_focus true
+bspc config click_to_focus true
+
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+bspc rule -a Steam state=floating follow=off
