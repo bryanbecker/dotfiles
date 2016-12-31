@@ -3,8 +3,9 @@ Description=Simple X Hotkey Daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/sxhkd &
-ExecReload=/usr/bin/pkill -USR1 -x sxhkd
+ExecStart=/usr/local/bin/sxhkd
+; ExecReload=/usr/bin/pkill -USR1 -x sxhkd
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
 Restart=always
 RestartSec=10
 
