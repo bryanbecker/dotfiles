@@ -22,8 +22,8 @@ install with GNUstow*
 
 # TODO:
 
-- [ ] Add Polybar configs
-- [ ] Add Spacemacs configs
+- [x] Add Polybar configs
+- [x] Add Spacemacs configs
 - [ ] Add lightdm theme
 - [ ] Add keyboard configs
 
@@ -41,6 +41,7 @@ install with GNUstow*
 - Vim is installed with `sudo apt-get install vim-gtk`.  Install [ Vundle ](https://github.com/VundleVim/Vundle.vim) first for the rc file to work
 - Terminal is [ Termite ](https://github.com/thestinger/termite/).  For ubuntu users, this [this script](https://github.com/xiouy/termite-install_ubuntu16.04.1) to compile easily
 - Launcher is [Rofi](https://davedavenport.github.io/rofi/)
+- [Polybar](git@github.com:jaagr/polybar.git) - make sure you edit the github token in the configs to match your own
 - Gui Theming:
   - GTK Theme: [Arc Dark](https://github.com/horst3180/arc-theme)
   - Icons: [Xenlism Wildfire](http://xenlism.github.io/wildfire/)
