@@ -86,8 +86,10 @@ override-redirect = true
 type = internal/github
 token = HAHA_IM_FILTERED!
 format-github = <label>
-format-github-prefix =  
-label =  %notifications%
+; format-github-prefix =  
+format-prefix =  
+; label =  %notifications%
+label =  %notifications%
 empty-notifications = false
 
 
