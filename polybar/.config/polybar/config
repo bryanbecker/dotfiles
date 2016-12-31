@@ -88,6 +88,7 @@ token = HAHA_IM_FILTERED!
 format-github = <label>
 format-github-prefix =  
 label =  %notifications%
+empty-notifications = false
 
 
 
