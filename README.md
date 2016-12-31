@@ -71,4 +71,5 @@ install with GNUstow*
 - **pass**
 - **i3lock-color**
 - **xdo**
+- [ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls
 
