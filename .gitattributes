@@ -1,1 +1,2 @@
-polybar/.config/polybar/config filter=smudge_polybar_secrets
+polybar/.config/polybar/config filter=polybar_secrets
+git/.gitconfig filter=git_secrets
