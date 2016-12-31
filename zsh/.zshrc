@@ -78,7 +78,7 @@ COMPLETION_WAITING_DOTS="true"
 #plugins=(git sudo z colorize cp dirhistory emacs git git-flow rvm vi-mode)
 #plugins=(git sudo z colorize cp dirhistory emacs git git-flow rvm gpg-agent asdf)
 plugins=(git sudo colorize cp dirhistory emacs git git-flow gpg-agent asdf \
-  gitignore mix systemd rsync ubuntu pass taskwarrior fasd colored-man-pages)
+  gitignore mix systemd rsync ubuntu pass taskwarrior fasd colored-man-pages golang)
 plugins+=(alias-tips)
 #plugins+=(zsh-nvm)
 
