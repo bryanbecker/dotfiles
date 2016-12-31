@@ -124,34 +124,3 @@ _comp_options+=(globdots)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-
-# fasd aliases
-alias v='f -e vim'
-#alias e='f -e $EDITOR'
-# alias e='f -e /home/bryan/.oh-my-zsh/plugins/emacs/emacsclient.sh'
-# alias e='f -e /home/bryan/.oh-my-zsh/plugins/emacs/emacsclient.sh --no-wait'
-# alias e='fasd -f -e emacs'
-alias j='fasd_cd -d'
-
-alias less='less -x4RFsX'
-
-function fasd_emacs(){
-  emacs $(fasd -f $@)
-}
-
-alias e=fasd_emacs
-
-# unstow
-alias unstow='stow --delete'
-
-# because why not?
-alias ryu='/home/bryan/src/repos/ryu/ryu -c'
-
-
-
-## using asdf instead
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
