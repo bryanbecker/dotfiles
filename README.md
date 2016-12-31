@@ -37,7 +37,7 @@ install with GNUstow*
 
 ## Individual Package Information:
 
-- [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for plugins and themes
+- [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for plugins with theme [powerlevel9k](https://github.com/bhilburn/powerlevel9k)
 - Vim is installed with `sudo apt-get install vim-gtk`.  Install [ Vundle ](https://github.com/VundleVim/Vundle.vim) first for the rc file to work
 - Terminal is [ Termite ](https://github.com/thestinger/termite/).  For ubuntu users, this [this script](https://github.com/xiouy/termite-install_ubuntu16.04.1) to compile easily
 - Launcher is [Rofi](https://davedavenport.github.io/rofi/)
@@ -54,6 +54,12 @@ install with GNUstow*
   - Greasemonkey
   - uBlock Origin
   - Vimperator
+  
+## Fonts:
+
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - mostly used for polybar
+- [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) - used in terminal / powerlevel9k
+- [Powerline Fonts](https://github.com/powerline/fonts) - favorite is Sauce Code Pro
   
 ## Other Cool Software
 - **xcape** for adding extra functionality to modifier keys (`ctrl` as `esc` when pressed alone)
