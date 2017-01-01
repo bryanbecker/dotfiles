@@ -124,3 +124,8 @@ _comp_options+=(globdots)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+# this should fix the errors from GTK, like:
+# "couldn't connect to accessibility bus"
+export NO_AT_BRIDGE=1
