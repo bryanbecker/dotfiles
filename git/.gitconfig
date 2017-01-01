@@ -5,3 +5,7 @@
 	oauth-token = HAHA_IM_FILTERED!
 [color]
 	ui = auto
+[alias]
+	co = checkout
+	st = status
+	br = branch
