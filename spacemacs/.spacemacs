@@ -53,6 +53,7 @@ values."
                       auto-completion-enable-sort-by-usage t
                       )
      helm
+     ;; ivy
 
      ;; +emacs
      better-defaults
@@ -86,6 +87,7 @@ values."
      ;php
      python ; (see docs if get error "blocking call...")
      (ruby :variables ruby-enable-enh-ruby-mode t)  ; (needs some gems installed in project context for full function)
+     shell-scripts
      sql
      typescript
      vimscript
@@ -109,13 +111,13 @@ values."
      ansible
      dash
      ; deft ; for note taking
-     ; fasd
+     fasd
      finance
      imenu-list
      nginx
      pandoc
      pdf-tools
-     (ranger :variables ranger-show-preview t)
+     ;; (ranger :variables ranger-show-preview t)
      restclient
      (shell :variables
             shell-default-height 30
@@ -133,7 +135,7 @@ values."
 
      ;; +web-services
      ; elfeed ; (need to configure)
-     search-engine
+     ;; search-engine
      ; twitter
      ; wakatime
      )
@@ -394,7 +396,8 @@ values."
   (setq
         doom-enable-brighter-comments t
         doom-neotree-enable-folder-icons t
-        doom-neotree-enable-file-icons t)
+        doom-neotree-enable-file-icons t
+        )
   ;; (setq rainbow-mode t)
   (setq vc-follow-symlinks t)
 
