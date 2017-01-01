@@ -35,8 +35,9 @@ install with GNUstow*
 - `cd` into the repository and run `stow stow` to install the ignore files
 
 
-## Individual Package Information:
+## Individual Package and Theme Information:
 
+- LightDM theme is [GlitchDM](https://github.com/bryanbecker/glitchdm)
 - [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for plugins with theme [powerlevel9k](https://github.com/bhilburn/powerlevel9k)
 - Vim is installed with `sudo apt-get install vim-gtk`.  Install [ Vundle ](https://github.com/VundleVim/Vundle.vim) first for the rc file to work
 - Terminal is [ Termite ](https://github.com/thestinger/termite/).  For ubuntu users, this [this script](https://github.com/xiouy/termite-install_ubuntu16.04.1) to compile easily
