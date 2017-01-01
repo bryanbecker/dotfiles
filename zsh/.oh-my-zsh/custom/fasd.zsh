@@ -8,4 +8,11 @@ function fasd_emacs(){
   emacs $(fasd -f $@)
 }
 
+alias eframe='emacsclient --alternate-editor "" --create-frame --no-wait'
+
+function fasd_emacs_frame(){
+  eframe $(fasd -f $@) --no-wait
+}
+
 alias e=fasd_emacs
+alias ef=fasd_emacs_frame
