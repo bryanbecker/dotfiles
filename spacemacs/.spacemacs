@@ -60,7 +60,7 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      org
-     ;semantic
+     ;;semantic
 
      ;; +email
 
@@ -77,14 +77,14 @@ values."
      (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
      csv
      elixir
-     ;elm
+     elm
      emacs-lisp
      erlang
      html
      javascript
      lua
      (markdown :variables markdown-live-preview-engine 'vmd)
-     ;php
+     ;;php
      python ; (see docs if get error "blocking call...")
      (ruby :variables ruby-enable-enh-ruby-mode t)  ; (needs some gems installed in project context for full function)
      shell-scripts
@@ -110,7 +110,7 @@ values."
      ;; +tools
      ansible
      dash
-     ; deft ; for note taking
+     ;; deft ; for note taking
      fasd
      finance
      imenu-list
@@ -125,13 +125,13 @@ values."
      systemd
      ;tmux (see documentation before install)
      vagrant
-     ;ycmd (see documentation first)
+     ;; ycmd (see documentation first)
 
      ;; +vim
      evil-cleverparens ; (i think needs additional config)
      evil-commentary
      evil-snipe
-     vim-empty-lines
+     ;vim-empty-lines   ; this appears to be the layer causing the crash
 
      ;; +web-services
      ; elfeed ; (need to configure)
@@ -402,10 +402,6 @@ values."
   (setq vc-follow-symlinks t)
 
   ;(spacemacs/load-theme 'doom-molokai)
-
-
-  ;; workaround for freezing
-  ;;(setq helm-echo-input-in-header-line nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
