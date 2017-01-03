@@ -63,7 +63,7 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time\curl -sSL https://get.rvm.io | bash -s stable --ruby
+# Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
@@ -75,12 +75,30 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git sudo z colorize cp dirhistory emacs git git-flow rvm vi-mode)
-#plugins=(git sudo z colorize cp dirhistory emacs git git-flow rvm gpg-agent asdf)
-plugins=(git sudo colorize cp dirhistory emacs git git-flow gpg-agent asdf \
-  gitignore mix systemd rsync ubuntu pass taskwarrior fasd colored-man-pages golang)
-plugins+=(alias-tips)
-#plugins+=(zsh-nvm)
+plugins=( \
+         asdf \       # adds integration with asdf
+         colored-man-pages \
+         cp \         # adds cpv alias that uses rsync
+         dirhistory \ # navigate file history with ALT-LEFT and ALT-RIGHT
+         emacs \      # emacs start-up functions
+         fasd \       # fasd support
+         git \        # adds a ton of git aliases
+         gitignore \  # adds `gi` alias
+         git-flow \   # completion for git flow
+         gpg-agent \
+         mix \        # completion for mix
+         pass \       # completion for pass
+         rsync \      # useful rsync aliases
+         sudo \       # press ESC twice to add/remove `sudo` from previous command
+         systemadmin \ # useful system admin tools
+         systemd \
+         taskwarrior \ # completion for task warrior
+         ubuntu \     # many useful aliases for apt-get
+         vagrant \    # vagrant completion
+         vi-mode \
+         )
+
+plugins+=(alias-tips)   # reminds you if command is aliased
 
 source $ZSH/oh-my-zsh.sh
 
