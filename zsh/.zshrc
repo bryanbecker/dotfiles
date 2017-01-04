@@ -12,12 +12,13 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 DEFAULT_USER="bryan"
 POWERLEVEL9K_CUSTOM_LOCK_SYMBOL="zsh_custom_lock"
 POWERLEVEL9K_CUSTOM_KEYBOARD_LAYOUT="zsh_get_keyboard_layout"
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs vi_mode custom_keyboard_layout custom_lock_symbol)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs custom_lock_symbol)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs vi_mode custom_lock_symbol)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 POWERLEVEL9K_OK_ICON=$'\u2714'
-#POWERLEVEL_VCS_CLEAN=
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2  # default 2
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"  # truncate_with_package_name, truncate_middle, truncate_from_right, truncate_from_left, (default) none
+POWERLEVEL9K_SHORTEN_DELIMITER=""
 
 zsh_custom_lock(){
   if [ ! -w $PWD ] ; then
@@ -86,8 +87,10 @@ plugins=( \
          gitignore \  # adds `gi` alias
          git-flow \   # completion for git flow
          gpg-agent \
+         # history-substring-search \ # history search like in fish
          mix \        # completion for mix
          pass \       # completion for pass
+         # per-directory-history \ # history completion per directory, ^G to switch to global
          rsync \      # useful rsync aliases
          sudo \       # press ESC twice to add/remove `sudo` from previous command
          systemadmin \ # useful system admin tools
@@ -95,10 +98,21 @@ plugins=( \
          taskwarrior \ # completion for task warrior
          ubuntu \     # many useful aliases for apt-get
          vagrant \    # vagrant completion
-         vi-mode \
+         # vi-mode \
          )
 
 plugins+=(alias-tips)   # reminds you if command is aliased
+plugins+=(directory-history)
+
+
+# change history-substring-search keys
+# bind ctrl+k and ctrl+j to substring search
+bindkey '^j' history-substring-search-up
+bindkey '^k' history-substring-search-down
+# bind up/down keys to directory history search
+bindkey '^[[A' directory-history-search-backward
+bindkey '^[[B' directory-history-search-forward
+
 
 source $ZSH/oh-my-zsh.sh
 
