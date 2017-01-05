@@ -1,0 +1,566 @@
+;-*- mode: Conf-*-
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #55
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[fonts]
+font-0 = NotoSans-Regular:size=10;0
+font-1 = SauceCodePro Nerd Font:size=10:fontformat=truetype;
+font-2 = Unifont:size=8;-3
+
+[global/wm]
+; used for bottom aligned bars
+;margin-top = 5
+; used for top aligned bars
+margin-bottom = 5
+
+
+; ---------------------------------------------------------------
+
+[bar/laptop]
+; Environment variables can be referenced using:
+;key = ${env:VAR:fallback value}
+monitor = ${env:MONITOR:eDP-1-1}
+; monitor = TWO
+; monitor = DP-1-1
+; monitor = eDP-1-1
+width = 100%
+height = 22
+offset-x = 0
+offset-y = 0
+font-0 = ${fonts.font-0}
+font-1 = ${fonts.font-1}
+font-2 = ${fonts.font-2}
+
+enable-ipc = true
+
+;background = ${xrdb:color9}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 2
+underline-color = #00f
+
+border-bottom = 2
+border-bottom-color = #333
+
+spacing = 1
+padding-left = 2
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+
+
+modules-left = powermenu mpd bspwm xwindow
+modules-center = cpu memory temperature filesystem
+; xbacklight currently not working
+modules-right = github xkeyboard volume wireless-network battery date
+
+tray-position = right
+tray-padding = 2
+tray-transparent = false
+tray-scale = 1.0
+
+wm-restack = bspwm
+
+override-redirect = true
+
+; scroll-up = bspwm-desknext
+; scroll-down = bspwm-deskprev
+
+[module/github]
+type = internal/github
+token = HAHA_IM_FILTERED!
+format-github = <label>
+; format-github-prefix =  
+format-prefix =  
+; label =  %notifications%
+label =  %notifications%
+empty-notifications = false
+
+
+
+[module/volume]
+type = internal/volume
+; Use the following command to list available mixer controls:
+; $ amixer scontrols | sed -nr "s/.*'([[-alnum-]]+)'.*/\1/p"
+;speaker-mixer = Speaker
+;headphone-mixer = Headphone
+; Use the following command to list available device controls
+; $ amixer controls | sed -r "/CARD/\!d; s/.*=([0-9]+).*name='([^']+)'.*/printf '%3.0f- %s\n' '\1' '\2'/e" | sort
+;headphone-id = 13
+; Use volume mapping (similar to amixer -M and alsamixer), where the increase in volume is linear to the ear
+; Default: false
+mapping = false
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = │
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #ff
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+format-disconnected-underline = ${self.format-connected-underline}
+format-packetloss = <animation-packetloss> <label-connected>
+
+label-connected = %essid% %downspeed:9%
+; label-disconnected = %{A:nm-connection-editor&}%ifname% disconnected{A}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+;ramp-signal-foreground = ${colors.foreground-alt}
+
+; Only applies if <ramp-signal> is used
+; ramp-signal-0 = ░░░░░
+; ramp-signal-1 = █░░░░
+; ramp-signal-2 = ▓█░░░
+; ramp-signal-3 = ▓▓█░░
+; ramp-signal-4 = ▓▓▓█░
+; ramp-signal-5 = ▓▓▓▓█
+;▁▂▃▄▅▆▇█
+;▁▁▁▁▁▁▁
+ramp-signal-font = 3
+ramp-signal-0 = ▁▁▁▁▁▁▁▁
+ramp-signal-1 = ▁▂▁▁▁▁▁▁
+ramp-signal-2 = ▁▂▃▁▁▁▁▁
+ramp-signal-3 = ▁▂▃▄▁▁▁▁
+ramp-signal-4 = ▁▂▃▄▅▁▁▁
+ramp-signal-5 = ▁▂▃▄▅▆▁▁
+ramp-signal-6 = ▁▂▃▄▅▆▇▁
+ramp-signal-7 = ▁▂▃▄▅▆▇█
+
+; Only applies if <animation-packetloss> is used
+#animation-packetloss-0 = ░
+animation-packetloss-0 = a
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = b
+#animation-packetloss-1 = ▒
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 94
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+; format-full-prefix = "> "
+format-full = <ramp-capacity> <label-full>
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y %b %d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+
+[module/powermenu]
+type = custom/menu
+
+label-open =  power
+label-open-foreground = ${colors.secondary}
+label-close = cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = logout
+menu-0-0-exec = menu-open-1
+menu-0-1 = reboot
+menu-0-1-exec = menu-open-2
+menu-0-2 = power off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = logout
+menu-1-1-exec = bspc quit -1
+
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+menu-2-0 = reboot
+; menu-2-0-exec = sudo reboot
+menu-2-0-exec = systemctl reboot
+
+menu-3-0 = power off
+; menu-3-0-exec = sudo poweroff
+menu-3-0-exec = systemctl poweroff
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+;format-online = <icon-prev> <icon-seekb> <label-song> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random> <bar-progress>
+format-online = <label-song> <icon-prev> <icon-seekb> <bar-progress> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
+label-offline = mpd is off
+format-offline = <label-offline>
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+;icon-prev = 
+icon-prev = 
+icon-seekb = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+;icon-next = 
+icon-next = 
+icon-seekf = 
+
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground = ${colors.primary}
+toggle-off-foreground = #66
+
+bar-progress-width = 20
+bar-progress-foreground-0 = #55aa55
+bar-progress-foreground-1 = #55aa55
+bar-progress-foreground-2 = #55aa55
+bar-progress-foreground-3 = #55aa55
+bar-progress-foreground-4 = #55aa55
+bar-progress-foreground-5 = #f5a70a
+bar-progress-foreground-6 = #ff5555
+bar-progress-gradient = false
+bar-progress-indicator = │
+bar-progress-indicator-font = 2
+bar-progress-indicator-foreground = #ff
+bar-progress-fill = ─
+bar-progress-fill-font = 2
+bar-progress-empty = ─
+bar-progress-empty-font = 2
+bar-progress-empty-foreground = ${colors.foreground-alt}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+format = <label-layout> <label-indicator>
+;blacklist-0 = num lock
+
+format-underline = ${colors.secondary}
+;format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+; %layout%, %name%, %number%
+; label-layout = %{A:switch&:}%name%{A}
+label-layout = %name%
+
+label-indicator-padding = 2
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 60
+
+mount-0 = /
+
+; <label-mounted>, <bar-free>, <bar-used>, <ramp-capacity>
+format-mounted = <label-mounted> <ramp-capacity>
+format-mounted-underline = #0a6cf5
+label-mounted = %free%
+
+;label-unmounted = %mountpoint%: not mounted
+;label-unmounted-foreground = ${colors.foreground-alt}
+bar-used-width = 10
+;bar-free-format = %{+u}%{+o}%fill%%{-u}%{-o}%indicator%%{+u}%{+o}%empty%%{-u}%{-o}
+bar-used-indicator = |
+bar-used-indicator-foreground = #ddffffff
+bar-used-indicator-font = 3
+bar-used-fill = █
+bar-used-fill-foreground = #99ffffff
+bar-used-fill-font = 3
+bar-used-empty = █
+bar-used-empty-font = 3
+bar-used-empty-foreground = #44ffffff
+
+ramp-capacity-font = 3
+ramp-capacity-0 = ▁
+ramp-capacity-0-foreground = #55aa55
+ramp-capacity-1 = ▂
+ramp-capacity-1-foreground = #55aa55
+ramp-capacity-2 = ▃
+ramp-capacity-2-foreground = #55aa55
+ramp-capacity-3 = ▄
+ramp-capacity-3-foreground = #55aa55
+ramp-capacity-4 = ▅
+ramp-capacity-4-foreground = #f5a70a
+ramp-capacity-5 = ▆
+ramp-capacity-5-foreground = #f5a70a
+ramp-capacity-6 = ▇
+ramp-capacity-6-foreground = #ff5555
+ramp-capacity-7 = █
+ramp-capacity-7-foreground = #ff5555
+
+[module/bspwm]
+; I keep accidentally hitting it...
+enable-scroll = false
+
+type = internal/bspwm
+pin-workspaces = false
+ws-icon-default = x
+format = <label-monitor> <label-state> <label-mode>
+;format = <label-state> <label-mode>
+label-monitor = "|"
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+
+[module/memory]
+type = internal/memory
+interval = 1
+;format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%
+;format = <label> <bar-used> <bar-free>
+format = <label> <bar-used>
+
+; Required if <bar-used> is used
+bar-used-width = 20
+bar-used-foreground-0 = #55aa55
+bar-used-foreground-1 = #557755
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = ▐
+bar-used-indicator-font = 2
+bar-used-indicator-foreground = #ddffffff
+bar-used-fill = ▐
+bar-used-fill-font = 2
+bar-used-empty = ▐
+bar-used-empty-font = 2
+bar-used-empty-foreground = #444444
+
+; Required if <bar-free> is used
+; bar-free-width = 50
+; bar-free-foreground-0 = #ff5555
+; bar-free-foreground-1 = #f5a70a
+; bar-free-foreground-2 = #557755
+; bar-free-foreground-3 = #55aa55
+; bar-free-indicator = ▐
+; bar-free-indicator-font = 2
+; bar-free-indicator-foreground = #ddffffff
+; bar-free-fill = ▐
+; bar-free-fill-font = 2
+; bar-free-empty = ▐
+; bar-free-empty-font = 2
+; bar-free-empty-foreground = #444444
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+;format-prefix = ""
+format = <label> <ramp-coreload>
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage%
+; Required if <ramp-coreload> is used
+ramp-coreload-font = 3
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = #55aa55
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = #55aa55
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = #55aa55
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = #55aa55
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = #f5a70a
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = #f5a70a
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = #ff5555
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+label-warn-prefix-foreground = ${colors.secondary}
+
+; I want 0 through 40 deg to all display the lowest
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+; next level
+ramp-10 = 
+ramp-11 = 
+; next level
+ramp-12 = 
+ramp-13 = 
+ramp-14 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/xbacklight]
+type = internal/xbacklight
+; ls -1 /sys/class/backlight/
+card = intel_backlight
+output = eDP-1-1
+;
+; Available tags:
+;   <label> (default)
+;   <bar>
+; format = %{A4:backlight_percentage%__p5:}%{A5:backlight_percentage%__m5:} <ramp> <bar> %{A}%{A}
+; Available tokens:
+;   %percentage% (default)
+;label = %percentage%
+
+; Required if <ramp> is used
+; ramp-0 = 🌕
+; ramp-1 = 🌔
+; ramp-2 = 🌓
+; ramp-3 = 🌒
+; ramp-4 = 🌑
+
+
+; Required if <bar> is used
+bar-width = 10
+bar-format = %{+u}%{+o}%fill%%{-u}%{-o}%indicator%%{+u}%{+o}%empty%%{-u}%{-o}
+bar-indicator = |
+bar-indicator-foreground = #ddffffff
+bar-indicator-font = 3
+bar-fill = █
+bar-fill-foreground = #99ffffff
+bar-fill-font = 3
+bar-empty = █
+bar-empty-font = 3
+bar-empty-foreground = #44ffffff
+
+;format = <label> <bar>
+;label = BL
+
+;bar-width = 10
+;bar-indicator = │
+;bar-indicator-foreground = #ff
+;bar-indicator-font = 2
+;bar-fill = ─
+;bar-fill-font = 2
+;bar-fill-foreground = #9f78e1
+;bar-empty = ─
+;bar-empty-font = 2
+;bar-empty-foreground = ${colors.foreground-alt}
+; vim:ft=dosini
