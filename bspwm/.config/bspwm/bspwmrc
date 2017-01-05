@@ -6,11 +6,6 @@
 $HOME/.config/polybar/launch.sh
 
 # set background
-# --bg-tile, --bg-center, --bg-max, --bg-fill
-# feh --bg-center picture.jpg
-# feh --randomize --recursive --bg-fill $HOME/Pictures/backgrounds/*
-
-# feh --no-fehbg --bg-fill '/home/bryan/Pictures/backgrounds/Dawn_by_Grigant.jpeg' '/home/bryan/Pictures/backgrounds/Colors.png' '/home/bryan/Pictures/backgrounds/absurdwordpreferred.deviantart.com/45_degrees_by_absurdwordpreferred-d589ocg.jpg' 
 feh --no-fehbg --bg-fill '/home/bryan/Pictures/backgrounds/glitch/wallhaven-365682.png'
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
@@ -27,11 +22,16 @@ for desktop in $(bspc query -m HDMI-1-2 -D); do
   bspc config -d $desktop top_padding 22;
 done
 
-bspc config split_ratio          0.52
+
+# colors
+# bspc config focused_border_color '#66d9ef'  # cyan
+bspc config focused_border_color '#87afff'  # light blue
+
+bspc config split_ratio          0.50
 #bspc config split_ratio          0.60
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-#bspc config focus_follows_pointer true
+bspc config focus_follows_pointer true
 #bspc config pointer_follows_focus true
 bspc config click_to_focus true
 
