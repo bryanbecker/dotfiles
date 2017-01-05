@@ -24,7 +24,7 @@ install with GNUstow*
 
 - [x] Add Polybar configs
 - [x] Add Spacemacs configs
-- [ ] Add lightdm theme
+- [x] Add lightdm theme
 - [ ] Add keyboard configs
 
 
