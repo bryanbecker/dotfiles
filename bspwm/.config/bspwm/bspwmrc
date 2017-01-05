@@ -2,9 +2,6 @@
 
 # sxhkd &
 
-# start polybar
-$HOME/.config/polybar/launch.sh
-
 # set background
 feh --no-fehbg --bg-fill '/home/bryan/Pictures/backgrounds/glitch/wallhaven-365682.png'
 
@@ -22,6 +19,10 @@ for desktop in $(bspc query -m HDMI-1-2 -D); do
   bspc config -d $desktop top_padding 22;
 done
 
+# start polybar
+# $HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch_laptop.sh
+$HOME/.config/polybar/launch_section.sh
 
 # colors
 # bspc config focused_border_color '#66d9ef'  # cyan
