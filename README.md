@@ -72,6 +72,8 @@ install with GNUstow*
 - **pass**
 - **i3lock-color**
 - **xdo**
-- ~~[ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls~~ too slow
-- [ expect ] - http://blog.robertelder.org/don-libes-expect-unix-automation-tool/
+- ~~ [ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls ~~  * too slow *
+- **expect** - http://blog.robertelder.org/don-libes-expect-unix-automation-tool/
+- ~~ [ vcspull ](https://github.com/tony/vcspull) - automatically keep multiple repos up to date ~~  * changed for myrepos
+- [ myrepos ](https://myrepos.branchable.com/) - run `mr update` inside $HOME to update all tracked repos (first run `stow myrepos`)
 

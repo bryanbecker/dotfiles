@@ -1,0 +1,40 @@
+# https://myrepos.branchable.com/
+
+[src/repos/bspwm]
+checkout = git clone 'git@github.com:baskerville/bspwm.git' 'bspwm'
+
+[src/repos/sxhkd]
+checkout = git clone 'git@github.com:baskerville/sxhkd.git' 'sxhkd'
+
+[src/repos/sutils]
+checkout = git clone 'git@github.com:baskerville/sutils.git' 'sutils'
+
+[src/repos/xdo]
+checkout = git clone 'git@github.com:baskerville/xdo.git' 'xdo'
+
+[src/repos/xtitle]
+checkout = git clone 'git@github.com:baskerville/xtitle.git' 'xtitle'
+
+[src/repos/compton]
+checkout = git clone 'git@github.com:chjj/compton.git' 'compton'
+
+[src/repos/dunst]
+checkout = git clone 'git@github.com:knopwob/dunst.git' 'dunst'
+
+[src/repos/i3lock-color]
+checkout = git clone 'git@github.com:chrjguill/i3lock-color.git' 'i3lock-color'
+
+[src/repos/polybar]
+checkout = git clone 'git@github.com:jaagr/polybar.git' 'polybar'
+
+[src/repos/termite]
+checkout = git clone 'https://github.com/thestinger/termite.git' 'termite'
+
+[src/repos/xwobf]
+checkout = git clone 'git@github.com:glindste/xwobf.git' 'xwobf'
+
+[src/repos/sack]
+checkout = git clone 'git@github.com:sampson-chen/sack.git' 'sack'
+
+[src/repos/crawl]
+checkout = git clone 'git@github.com:crawl/crawl.git' 'crawl'
