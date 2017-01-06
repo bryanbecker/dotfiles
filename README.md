@@ -72,5 +72,6 @@ install with GNUstow*
 - **pass**
 - **i3lock-color**
 - **xdo**
-- [ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls
+- ~~[ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls~~ too slow
+- [ expect ] - http://blog.robertelder.org/don-libes-expect-unix-automation-tool/
 
