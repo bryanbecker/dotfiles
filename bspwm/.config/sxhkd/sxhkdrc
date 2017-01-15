@@ -11,8 +11,8 @@ super + space
   rofi -show run
 
 # open commonly used applications
-super + r ; {e,f,s}
-  {/home/bryan/.oh-my-zsh/plugins/emacs/emacsclient.sh --no-wait,firefox,steam}
+super + r ; {f,s,e}
+  {firefox,steam,emacsclient --alternate-editor "" --create-frame --no-wait}
 
 # make sxhkd reload its configuration files:
 super + Escape
