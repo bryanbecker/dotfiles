@@ -92,6 +92,7 @@ plugins=( \
          pass \       # completion for pass
          # per-directory-history \ # history completion per directory, ^G to switch to global
          rsync \      # useful rsync aliases
+         # ssh-agent \  # automatically start ssh-agent
          sudo \       # press ESC twice to add/remove `sudo` from previous command
          systemadmin \ # useful system admin tools
          systemd \
@@ -105,13 +106,25 @@ plugins+=(alias-tips)   # reminds you if command is aliased
 plugins+=(directory-history)
 
 
+# set up ssh-agent
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
+# zstyle :omz:plugins:ssh-agent identities id_rsa
+# zstyle :oms:plugins:ssh-agent lifetime 4h
+
+
 # change history-substring-search keys
 # bind ctrl+k and ctrl+j to substring search
 bindkey '^j' history-substring-search-up
 bindkey '^k' history-substring-search-down
+
 # bind up/down keys to directory history search
 bindkey '^[[A' directory-history-search-backward
 bindkey '^[[B' directory-history-search-forward
+# zmodload zsh/terminfo
+# bindkey "$terminfo[kcuu1]" directory-history-search-backward
+# bindkey "$terminfo[kcud1]" directory-history-search-forward
+# bindkey "$terminfo[kpp]" directory-history-search-backward
+# bindkey "$terminfo[knp]" directory-history-search-forward
 
 
 source $ZSH/oh-my-zsh.sh

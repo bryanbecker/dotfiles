@@ -9,3 +9,6 @@ alias unstow='stow --delete'
 
 # because why not?
 alias ryu='/home/bryan/src/repos/ryu/ryu -c'
+
+# undo `ag` alias
+alias ag='/usr/bin/ag'
