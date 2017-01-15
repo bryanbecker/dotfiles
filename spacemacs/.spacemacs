@@ -40,7 +40,7 @@ values."
      ;; +chat
 
      ;; +checkers
-     spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
 
      ;; +completion
@@ -92,6 +92,9 @@ values."
      typescript
      vimscript
      yaml
+
+     ;; +misc
+     nlinum
 
      ;; +source-control
      git
@@ -228,10 +231,12 @@ values."
 
    dotspacemacs-default-font '("Source Code Pro for Powerline"
    ;; dotspacemacs-default-font '("SauceCodePro Nerd Font"
-                               :size 15
+                               ;; :size 15
+                               :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.0)
+                               ;; :powerline-scale 1.2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -273,7 +278,7 @@ values."
    dotspacemacs-display-default-layout t
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -330,7 +335,7 @@ values."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-inactive-transparency 80
    ;; If non nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
@@ -344,10 +349,11 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   ;; dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'evil
+   dotspacemacs-folding-method 'origami
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -379,6 +385,9 @@ values."
    ))
 
 (defun dotspacemacs/user-init ()
+  ;; workaround for TRAMP bug https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=810640
+  ;; (setq tramp-ssh-controlmaster-options nil)
+  ;; (setq tramp-verbose 10)
   (setq configuration-layer--elpa-archives
     '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
       ("org-cn"   . "http://elpa.emacs-china.org/org/")
@@ -386,22 +395,55 @@ values."
   )
 
 (defun dotspacemacs/user-config ()
+
+  ;----------------------------
+  ; Doom theme
+  ;---------------------------
   (require 'doom-themes)
+  (require 'doom-nlinum)
   (require 'doom-neotree)
-  (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
-  (add-hook 'find-file-hook 'doom-buffer-mode)
-  ;(setq doom-neotree-enable-folder-icons t)
-  ;(setq doom-neotree-enable-file-icons t)
-  ;(setq default
+  (load-theme 'doom-one t)
+  (load-theme 'molokai t)
+  ;; (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)   ;;  brighter minibuffer when active  ( causes "invalid face linum" error )
+  ;; (add-hook 'find-file-hook 'doom-buffer-mode)                  ;;  brighter source buffers
+  (add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)       ;; change ediff buffer
   (setq
         doom-enable-brighter-comments t
         doom-neotree-enable-folder-icons t
         doom-neotree-enable-file-icons t
+        doom-neotree-enable-chevron-icons t
         )
+
+  ;; Preset `nlinum-format' for minimum width.
+  (defun my-nlinum-mode-hook ()
+    (when nlinum-mode
+      (setq-local nlinum-format
+                  (concat "%" (number-to-string
+                               ;; Guesstimate number of buffer lines.
+                               (ceiling (log (max 1 (/ (buffer-size) 80)) 10)))
+                          "d"))))
+  (add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
+
+
   ;; (setq rainbow-mode t)
   (setq vc-follow-symlinks t)
 
-  ;(spacemacs/load-theme 'doom-molokai)
+  (setq highlight-indentation-mode t)
+  (setq highlight-indentation-current-column-mode t)
+  (spacemacs/toggle-highlight-indentation-current-column-on)
+  (spacemacs/toggle-automatic-symbol-highlight-on)
+      (spacemacs/toggle-highlight-indentation-on)
+
+
+  ; include remind .rem files as a shell mode
+  (setq auto-mode-alist
+        (cons '(".rem$" . shell-script-mode) auto-mode-alist))
+
+  (add-hook 'sh-mode-hook
+            (lambda()
+              (auto-fill-mode nill)))
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
