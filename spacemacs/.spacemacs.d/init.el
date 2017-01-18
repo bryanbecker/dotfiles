@@ -38,6 +38,8 @@ values."
      ;; ----------------------------------------------------------------
 
      ;; +chat
+     ;; (rcirc :variables rcirc-enable-authinfo-support t)
+     erc
 
      ;; +checkers
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -47,8 +49,8 @@ values."
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle ;complete, cycle, nil
-                      auto-completion-complete-with-key-sequence "jk"
-                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-complete-with-key-sequence "hh"
+                      auto-completion-complete-with-key-sequence-delay 0.2
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t
                       )
@@ -63,6 +65,11 @@ values."
      ;;semantic
 
      ;; +email
+     (mu4e :variables
+           mu4e-account-alist t
+           mu4e-enable-notifications t
+           mu4e-enable-mode-line t)
+     ;; gnus
 
      ;; +frameworks
 
@@ -113,7 +120,7 @@ values."
      ;; +tools
      ansible
      dash
-     ;; deft ; for note taking
+     deft ; for note taking
      fasd
      finance
      imenu-list
@@ -123,6 +130,9 @@ values."
      ;; (ranger :variables ranger-show-preview t)
      restclient
      (shell :variables
+            shell-default-shell 'eshell
+            shell-enable-smart-eshell t
+            shell-default-term-shell "/bin/zsh"
             shell-default-height 30
             shell-default-position 'bottom)
      systemd
@@ -137,9 +147,10 @@ values."
      ;vim-empty-lines   ; this appears to be the layer causing the crash
 
      ;; +web-services
-     ; elfeed ; (need to configure)
+     (elfeed :variables rmh-elfeed-org-files (list "~/.spacemacs.d/feeds.org"))
      ;; search-engine
-     ; twitter
+     (twitter :variables
+              twittering-user-master-password t)
      ; wakatime
      )
 
@@ -219,10 +230,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         ;; spacemacs-dark
-                         molokai
                          doom-molokai
-                         doom-one
+                         molokai
                          )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -278,7 +287,7 @@ values."
    dotspacemacs-display-default-layout t
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -392,6 +401,8 @@ values."
     '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
       ("org-cn"   . "http://elpa.emacs-china.org/org/")
       ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  (setq-default git-magit-status-fullscreen t)
+  (setq-default highlight-indentation-current-column-mode t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -402,10 +413,12 @@ values."
   (require 'doom-themes)
   (require 'doom-nlinum)
   (require 'doom-neotree)
-  (load-theme 'doom-one t)
-  (load-theme 'molokai t)
+  ;; (load-theme 'doom-one t)
+  ;; (load-theme 'molokai t)
+
   ;; (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)   ;;  brighter minibuffer when active  ( causes "invalid face linum" error )
   ;; (add-hook 'find-file-hook 'doom-buffer-mode)                  ;;  brighter source buffers
+
   (add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)       ;; change ediff buffer
   (setq
         doom-enable-brighter-comments t
@@ -428,11 +441,11 @@ values."
   ;; (setq rainbow-mode t)
   (setq vc-follow-symlinks t)
 
-  (setq highlight-indentation-mode t)
-  (setq highlight-indentation-current-column-mode t)
+  ;; (setq highlight-indentation-mode t)
+  ;; (setq highlight-indentation-current-column-mode t)
   (spacemacs/toggle-highlight-indentation-current-column-on)
   (spacemacs/toggle-automatic-symbol-highlight-on)
-      (spacemacs/toggle-highlight-indentation-on)
+  (spacemacs/toggle-highlight-indentation-on)
 
 
   ; include remind .rem files as a shell mode
@@ -444,7 +457,90 @@ values."
               (auto-fill-mode nill)))
 
 
-  )
+  ;; smtp
+  (require 'smtpmail)
+  (setq message-send-mail-function 'smtpmail-send-it)
+  (setq smtpmail-debug-info t)
+  ;; mu4e Email configuration
+  (setq mail-user-agent 'mu4e-user-agent)
+  (with-eval-after-load 'mu4e-alert
+    (mu4e-alert-set-default-style 'libnotify))  ;; notifications, libnotify
+  (setq
+        mu4e-maildir "~/Mail"
+        mu4e-drafts-folder "/Drafts"
+        mu4e-sent-folder "/Sent"
+        mu4e-trash-folder "/Trash"
+        mu4e-refile-folder "/Archive"
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-html2text-command "w3m -T text/html"
+        mu4e-update-interval 120  ;; update every  sec
+        mu4e-sent-messages-behavior  'delete  ;; IMAP does this for us
+        ;; mu4e-message-signature-file "~/path/to/signature"
+   )
+  (setq mu4e-maildir-shortcuts
+        '(("/INBOX" . ?i)
+          ("/Drafts" . ?d)
+          ("/Junk" . ?j)
+          ("/Trash" . ?t)
+          ("/Sent" . ?s)
+          ))
+  (load-file "~/.spacemacs.d/email.el")
+  (mu4e/mail-account-reset)
+
+
+  ;; irc configuration
+  (setq erc-lurker-hide-list '("JOIN" "PART" "QUIT")
+        erc-lurker-threshold-time 1800
+        erc-rename-buffers t
+        )
+  (load-file "~/.spacemacs.d/irc.el")  ;; keep personal login information out of dotfiles
+
+
+  ;; Custom layouts
+  (load-file "~/.spacemacs.d/personal_layouts.el")
+
+  (spacemacs|define-custom-layout "@Mail"
+    :binding "m"
+    :body
+    (mu4e))
+
+  (spacemacs|define-custom-layout "@Deft"
+    :binding "D"
+    :body
+    (deft))
+
+  (spacemacs|define-custom-layout "@Feeds"
+    :binding "f"
+    :body
+    (elfeed))
+
+  (spacemacs|define-custom-layout "@Twitter"
+    :binding "t"
+    :body
+    (twit))
+
+  ;; workaround for nlinum not working with multiple frames
+  (defvar frame-ready nil)
+  (add-hook 'after-make-frame-functions (lambda (frame) (set-frame-parameter frame 'frame-ready t)))
+  (add-hook 'after-init-hook (lambda () (set-frame-parameter nil 'frame-ready t)))
+  (defun nlinum--setup-window ()
+    (let ((width (if (and frame-ready (display-graphic-p)) ;; <-- Here
+                     (ceiling
+                      (let ((width (nlinum--face-width 'linum)))
+                        (if width
+                            (/ (* nlinum--width 1.0 width)
+                               (frame-char-width))
+                          (/ (* nlinum--width 1.0
+                                (nlinum--face-height 'linum))
+                             (frame-char-height)))))
+                   nlinum--width)))
+      (set-window-margins nil (if nlinum-mode width)
+                          (cdr (window-margins)))))
+
+)
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
