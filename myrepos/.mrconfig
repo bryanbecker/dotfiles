@@ -38,3 +38,12 @@ checkout = git clone 'git@github.com:sampson-chen/sack.git' 'sack'
 
 [src/repos/crawl]
 checkout = git clone 'git@github.com:crawl/crawl.git' 'crawl'
+
+[src/repos/lynis]
+checkout = git clone 'git@github.com:CISOfy/lynis.git' 'lynis'
+
+[.emacs.d]
+checkout = git clone 'git@github.com:syl20bnr/spacemacs.git' '.emacs.d'
+
+[src/repos/isync]
+checkout = git clone 'git://git.code.sf.net/p/isync/isync' 'isync'
