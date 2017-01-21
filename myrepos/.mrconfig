@@ -2,9 +2,15 @@
 
 [src/repos/bspwm]
 checkout = git clone 'git@github.com:baskerville/bspwm.git' 'bspwm'
+install =
+          make -j4
+          sudo make install
 
 [src/repos/sxhkd]
 checkout = git clone 'git@github.com:baskerville/sxhkd.git' 'sxhkd'
+install =
+          make -j4
+          sudo make install
 
 [src/repos/sutils]
 checkout = git clone 'git@github.com:baskerville/sutils.git' 'sutils'
@@ -17,15 +23,35 @@ checkout = git clone 'git@github.com:baskerville/xtitle.git' 'xtitle'
 
 [src/repos/compton]
 checkout = git clone 'git@github.com:chjj/compton.git' 'compton'
+install =
+          make -j4
+          # make docs   # needs asciidoc, which is almost 1GB of dependencies
+          # sudo make install
+          sudo make MANPAGES= install
 
 [src/repos/dunst]
 checkout = git clone 'git@github.com:knopwob/dunst.git' 'dunst'
+install =
+          make -j4
+          sudo make install
 
 [src/repos/i3lock-color]
 checkout = git clone 'git@github.com:chrjguill/i3lock-color.git' 'i3lock-color'
 
 [src/repos/polybar]
-checkout = git clone 'git@github.com:jaagr/polybar.git' 'polybar'
+# checkout = git clone --branch 2.5.2 --recursive 'git@github.com:jaagr/polybar.git' 'polybar'
+checkout = git clone --recursive 'git@github.com:jaagr/polybar.git' 'polybar'
+update =
+        git pull
+        git submodule update --init --recursive
+install =
+          mkdir -p build
+          cd build
+          cmake -DENABLE_XRANDR_MONITORS=0 ..   # fix for ubuntu xrandr issue #344
+          sudo make -j4 install
+          # git clean -fd
+          # cmake .
+          # sudo make -j4 install
 
 [src/repos/termite]
 checkout = git clone 'https://github.com/thestinger/termite.git' 'termite'
@@ -37,7 +63,13 @@ checkout = git clone 'git@github.com:glindste/xwobf.git' 'xwobf'
 checkout = git clone 'git@github.com:sampson-chen/sack.git' 'sack'
 
 [src/repos/crawl]
-checkout = git clone 'git@github.com:crawl/crawl.git' 'crawl'
+checkout = git clone --recursive 'git@github.com:crawl/crawl.git' 'crawl'
+update =
+        git pull
+        git submodule update --init --recursive
+install =
+        cd crawl-ref/source
+        sudo make TILES=y prefix=/usr/local -j4 install
 
 [src/repos/lynis]
 checkout = git clone 'git@github.com:CISOfy/lynis.git' 'lynis'
