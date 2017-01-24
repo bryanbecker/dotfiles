@@ -1,0 +1,9 @@
+# -*-Conf-*-
+
+
+# include = gammafunk/target_skill.lua
+# include = gammafunk/char_dump.lua
+# include = gammafunk/force_mores.lua
+# include = gammafunk/safe_eat.lua
+
+# include = gammafunk/gammafunk.rc
