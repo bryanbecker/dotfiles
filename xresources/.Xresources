@@ -23,7 +23,7 @@ Xft.rgba:	rgb
 Xautolock.notifier: notify-send Locking screen in 30s
 Xautolock.notify: 30
 Xautolock.corners: ----
-Xautolock.time: 10
+Xautolock.time: 30
 Xautolock.locker: xwobflock
 
 
