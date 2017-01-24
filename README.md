@@ -20,19 +20,24 @@ install with GNUstow*
 ░░░░░░░█░░░░░░░░█░░  
 ░░░░░░▐▌░░░░░░░░░█░  
 
+### Notes:
+
+- the systemd scripts can be weird if you boot up with a different window manager.  I recommond only using the `emacs` one
+- I use dvorak keyboard layout, so if some configured hotkeys seem weird, you know why
+
 # TODO:
 
-- [x] Add Polybar configs
-- [x] Add Spacemacs configs
-- [x] Add lightdm theme
 - [ ] Add keyboard configs
+- [ ] Add task warrior configs
+- [ ] Add `/etc/` customizations
 
 
 
 ## Install
 
-- Clone the repo somewhere into `$HOME` (*note*: if you clone somewhere else, `stow` will not work as expected)
+- Clone the repo somewhere into `$HOME`. *NOTE*: if you clone somewhere else, `stow` will not work as expected (stow automatically copies files into `../`)
 - `cd` into the repository and run `stow stow` to install the ignore files
+- `myrepos` is already configured to download, compile, and install many of the packages.  It does not manage requirements, though.  
 
 
 ## Individual Package and Theme Information:
@@ -65,15 +70,20 @@ install with GNUstow*
   
 ## Other Cool Software
 - **xcape** for adding extra functionality to modifier keys (`ctrl` as `esc` when pressed alone)
+- **[ mosh ](https://mosh.org/)** replaces SSH.  Keeps the connection up and fixes input lag.  Useful for poor connections
 - **thefuck**
 - **tldr**
-- **asdf**
+- **asdf** like `rvm` but for everything
 - **glances**
 - **pass**
 - **i3lock-color**
 - **xdo**
-- ~~ [ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls ~~  * too slow *
+- ~~[ lsp ](https://github.com/dborzov/lsp) - a more human friendly ls~~  * too slow *
 - **expect** - http://blog.robertelder.org/don-libes-expect-unix-automation-tool/
-- ~~ [ vcspull ](https://github.com/tony/vcspull) - automatically keep multiple repos up to date ~~  * changed for myrepos
+- ~~[ vcspull ](https://github.com/tony/vcspull) - automatically keep multiple repos up to date~~  * changed for myrepos
 - [ myrepos ](https://myrepos.branchable.com/) - run `mr update` inside $HOME to update all tracked repos (first run `stow myrepos`)
+
+## Hints:
+- use `xprop`, then click on a window to get information about it.  This is useful for configuring compton, sxhkd, bspwm, etc.
+- use `xev` to get information on key or button names for use in sxhkd
 

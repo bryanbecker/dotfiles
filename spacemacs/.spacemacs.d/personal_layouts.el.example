@@ -1,0 +1,13 @@
+(spacemacs|define-custom-layout "@Project1"
+  :binding "p"
+  :body
+  (find-file "~/src/projects/project1/some-file")
+  (neotree-find-project-root)
+  )
+
+(spacemacs|define-custom-layout "@Project1"
+  :binding "P"
+  :body
+  (find-file "~/src/projects/project2/some-file")
+  (neotree-find-project-root)
+  )
