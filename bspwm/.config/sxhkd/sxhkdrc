@@ -109,6 +109,26 @@ super + y
 super + g
 	bspc node -s biggest
 
+# ' , .
+# a o e  desktop/monitor control
+# ; q j
+# apostrophe, comma, period, semicolon
+
+# focus or send desktop to monitor
+super + {_,shift + }{a,o,e}
+  bspc {monitor --focus,desktop --to-monitor} ^{1,2,3}
+
+# cycle desktop
+super + {apostrophe,period}
+  bspc desktop --bubble {prev,next}
+  # bspc desktop --focus {prev,next}.local
+
+# insert / remove desktop (wont remove if desktop has windows)
+super + {comma,q}
+  bspc {monitor --add-desktops XXX,desktop --remove}
+
+# send node to desktop
+
 #
 # state/flags
 #
