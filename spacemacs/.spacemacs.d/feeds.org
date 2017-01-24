@@ -3,17 +3,26 @@
 ** http://git-annex.branchable.com/design/assistant/blog/index.rss :mustread:
 ** http://feeds.feedburner.com/InformationIsBeautiful
 ** http://onethingwell.org/rss
-** [[http://orgmode.org][Org Mode Links supported as well]]
-** Updates
+** [[http://orgmode.org][Org Mode]]
+** Updates                                                          :updates:
 **** https://about.gitlab.com/atom.xml
 **** https://blog.protonmail.ch/feed
 **** http://neovim.org/news.xml
 **** https://letsencrypt.org/feed.xml
 **** http://crawl.develz.org/wordpress/feed
+**** Github Repos                                                   :github:
+***** [[https://github.com/cantino/huginn/commits/master.atom][Huginn Commits]]                                                 :huginn:
+***** [[https://github.com/jaagr/polybar/commits/master.atom][Polybar Commits]]                                               :polybar:
+***** [[https://github.com/baskerville/bspwm/commits/master.atom][Bspwm Commits]]                                                   :bspwm:
+***** [[https://github.com/baskerville/sxhkd/commits/master.atom][Sxhkd Commits]]                                                   :sxhkd:
 ** Software Development                                                 :dev:
+*** Elixir                                                           :elixir:
+**** http://feeds.feedburner.com/ElixirLang
+**** https://elixirstatus.com/rss
 *** Emacs                                                    :emacs:mustread:
 **** http://www.terminally-incoherent.com/blog/feed
 **** http://nullprogram.com/feed
 **** entry-title: \(emacs\|org-mode\)
 **** http://planet.emacsen.org/atom.xml
 *** Web Development                                                     :web:
+    

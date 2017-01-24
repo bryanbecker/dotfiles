@@ -155,6 +155,7 @@ values."
      )
 
    dotspacemacs-additional-packages '(
+                                      ;; mu4e-contrib
                                       doom-themes
                                       all-the-icons
                                       )
@@ -230,8 +231,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         doom-molokai
                          molokai
+                         doom-molokai
                          )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -358,8 +359,8 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   ;; dotspacemacs-line-numbers t
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers t
+   ;; dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'origami
@@ -401,8 +402,7 @@ values."
     '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
       ("org-cn"   . "http://elpa.emacs-china.org/org/")
       ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
-  (setq-default git-magit-status-fullscreen t)
-  (setq-default highlight-indentation-current-column-mode t)
+  (setq exec-path-from-shell-check-startup-files nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -443,9 +443,9 @@ values."
 
   ;; (setq highlight-indentation-mode t)
   ;; (setq highlight-indentation-current-column-mode t)
-  (spacemacs/toggle-highlight-indentation-current-column-on)
+  ;; (spacemacs/toggle-highlight-indentation-current-column-on)
   (spacemacs/toggle-automatic-symbol-highlight-on)
-  (spacemacs/toggle-highlight-indentation-on)
+  ;; (spacemacs/toggle-highlight-indentation-on)
 
 
   ; include remind .rem files as a shell mode
@@ -465,6 +465,7 @@ values."
   (setq mail-user-agent 'mu4e-user-agent)
   (with-eval-after-load 'mu4e-alert
     (mu4e-alert-set-default-style 'libnotify))  ;; notifications, libnotify
+  (require 'mu4e-contrib)
   (setq
         mu4e-maildir "~/Mail"
         mu4e-drafts-folder "/Drafts"
@@ -474,7 +475,10 @@ values."
         mu4e-view-show-images t
         mu4e-view-show-addresses t
         mu4e-get-mail-command "mbsync -a"
-        mu4e-html2text-command "w3m -T text/html"
+        mu4e-view-prefer-html nil
+        ;; mu4e-html2text-command "w3m -T text/html"
+        mu4e-html2text-command "html2markdown --body-width=0 | sed \"s/&nbsp_place_holder;/ /g; /^$/d\""
+        ;; mu4e-html2text-command "html2markdown | grep -v '&nbsp_place_holder;'"
         mu4e-update-interval 120  ;; update every  sec
         mu4e-sent-messages-behavior  'delete  ;; IMAP does this for us
         ;; mu4e-message-signature-file "~/path/to/signature"
