@@ -24,7 +24,12 @@ super + shift + d
 ## Fn and special keys:
 #F1 .. F2
 #XF86MonBrightnessUp or Down
+
+XF86MonBrightness{Down,Up}
+  xbacklight -{dec,inc} 10
+
 #F3 XF86LaunchA
+
 #F4 XF86LuanchB
 #F5/F6 XF86KbdBrightnessUp or Down
 
@@ -118,7 +123,7 @@ super + g
 super + {_,shift + }{a,o,e}
   bspc {monitor --focus,desktop --to-monitor} ^{1,2,3}
 
-# cycle desktop
+# bubble desktop
 super + {apostrophe,period}
   bspc desktop --bubble {prev,next}
   # bspc desktop --focus {prev,next}.local
