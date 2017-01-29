@@ -2,6 +2,10 @@
 noremap j 3j
 noremap k 3k
 
+" adjust search to enable highlight when searching and disable when escape is pressed
+noremap n :set hlsearch<return>n
+noremap <esc> :noh<return><esc>
+
 " allow ublock origin popup to show in liberator bar
 " alternative fix is go to about:config and set
 " extensions.ublock0.forceLegacyToolbarButton to true
