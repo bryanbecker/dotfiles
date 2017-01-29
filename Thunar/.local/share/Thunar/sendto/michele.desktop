@@ -1,0 +1,8 @@
+# SCP files to michele
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Exec=scp -r %f michele:~/Desktop/
+Icon=/usr/share/icons/Xenlism-Wildfire/Devices/macmini.svg
+Name=Send to Michele
