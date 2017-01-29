@@ -1,0 +1,9 @@
+# Command Macros:
+M:]
+A:===set_target_skill
+
+M:S
+A:===save_with_message
+
+M:e
+A:===safe_eat
