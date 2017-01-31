@@ -2,10 +2,11 @@
 Description=Run xcape
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/xcape -e 'Control_L=Escape' &
-Restart=always
-RestartSec=10
+Type=forking
+ExecStart=/usr/bin/xcape -e 'Control_L=Escape'
+# Restart=always
+# RestartSec=10
 
 [Install]
-WantedBy=default.target
+# WantedBy=default.target
+WantedBy=startup.target

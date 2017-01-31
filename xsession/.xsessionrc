@@ -63,7 +63,7 @@ compton -b &
 # polybar top &   # moved to bspwm config so it doesn't interfere with xubuntu
 # unclutter &   # changed to run as service instead
 setxkbmap us_custom,us_custom -variant dvorak,"" -option grp:toggle
-xcape -e 'Control_L=Escape' &
+# xcape -e 'Control_L=Escape' &
 # xautolock -time 10 -locker xwobflock -corners ---- -notify 30 -notifier notify-send temp  # changed to service
 # start mpd if not already running
 [ ! -s $HOME/.config/mpd/pid ] && mpd
