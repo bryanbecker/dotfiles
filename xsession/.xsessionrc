@@ -59,7 +59,7 @@ xrandr --output HDMI-1-2 --left-of eDP-1-1 --output DP-1-1 --left-of HDMI-1-2
 # xrandr > /tmp/xrandr_output
 
 dunst &
-compton -b &
+# compton -b &
 # polybar top &   # moved to bspwm config so it doesn't interfere with xubuntu
 # unclutter &   # changed to run as service instead
 setxkbmap us_custom,us_custom -variant dvorak,"" -option grp:toggle
