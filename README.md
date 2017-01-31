@@ -22,7 +22,6 @@ install with GNUstow*
 
 ### Notes:
 
-- the systemd scripts can be weird if you boot up with a different window manager.  I recommond only using the `emacs` one
 - I use dvorak keyboard layout, so if some configured hotkeys seem weird, you know why
 
 # TODO:
@@ -39,6 +38,10 @@ install with GNUstow*
 - `cd` into the repository and run `stow stow` to install the ignore files
 - `myrepos` is already configured to download, compile, and install many of the packages.  It does not manage requirements, though.  
 
+## Set up systemd files
+
+- If you want to use my systemd files, first run `stow systemd`, then manually enable each one you want
+- For example, you probably want sxhkd to start on boot, so run `systemctl --user enable sxhkd` to enable it on boot
 
 ## Individual Package and Theme Information:
 
@@ -82,6 +85,7 @@ install with GNUstow*
 - **expect** - http://blog.robertelder.org/don-libes-expect-unix-automation-tool/
 - ~~[ vcspull ](https://github.com/tony/vcspull) - automatically keep multiple repos up to date~~  * changed for myrepos
 - [ myrepos ](https://myrepos.branchable.com/) - run `mr update` inside $HOME to update all tracked repos (first run `stow myrepos`)
+- **[ task spooler ](http://vicerveza.homeunix.net/~viric/soft/ts/article_linux_com.html) - `ts` (`tsp` on ubuntu) -- queues tasks to run one-at-a-time.  Useful for youtube-dl
 
 ## Hints:
 - use `xprop`, then click on a window to get information about it.  This is useful for configuring compton, sxhkd, bspwm, etc.
