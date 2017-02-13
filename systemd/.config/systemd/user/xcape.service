@@ -9,4 +9,5 @@ ExecStart=/usr/bin/xcape -e 'Control_L=Escape'
 
 [Install]
 # WantedBy=default.target
-WantedBy=startup.target
+# WantedBy=startup.target
+WantedBy=graphical-session.target
