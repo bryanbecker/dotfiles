@@ -87,8 +87,11 @@ values."
      elm
      emacs-lisp
      erlang
-     html
-     javascript
+     (html :variables
+           web-mode-markup-indent-offset 2)
+     (javascript :variables
+                 js-indent-level 2
+                 js2-basic-offset 2)
      lua
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;;php
@@ -152,12 +155,15 @@ values."
      (twitter :variables
               twittering-user-master-password t)
      ; wakatime
+
+     ;; +custom
      )
 
    dotspacemacs-additional-packages '(
                                       ;; mu4e-contrib
                                       doom-themes
                                       all-the-icons
+                                      (vue-mode :location (recipe :fetcher github :repo "codefalling/vue-mode"))
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -231,8 +237,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         molokai
                          doom-molokai
+                         molokai
                          )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -406,6 +412,7 @@ values."
   )
 
 (defun dotspacemacs/user-config ()
+  (use-package vue-mode)
 
   ;----------------------------
   ; Doom theme
@@ -414,7 +421,7 @@ values."
   (require 'doom-nlinum)
   (require 'doom-neotree)
   ;; (load-theme 'doom-one t)
-  ;; (load-theme 'molokai t)
+  (load-theme 'doom-molokai t)
 
   ;; (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)   ;;  brighter minibuffer when active  ( causes "invalid face linum" error )
   ;; (add-hook 'find-file-hook 'doom-buffer-mode)                  ;;  brighter source buffers
@@ -438,7 +445,7 @@ values."
   (add-hook 'nlinum-mode-hook #'my-nlinum-mode-hook)
 
 
-  ;; (setq rainbow-mode t)
+  (setq rainbow-mode t)
   (setq vc-follow-symlinks t)
 
   ;; (setq highlight-indentation-mode t)
