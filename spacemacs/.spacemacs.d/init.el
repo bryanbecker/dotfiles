@@ -525,7 +525,8 @@ values."
     :body
     (twit))
 
-  ;; workaround for nlinum not working with multiple frames
+  ; workaround for nlinum not working with multiple frames
+
   (defvar frame-ready nil)
   (add-hook 'after-make-frame-functions (lambda (frame) (set-frame-parameter frame 'frame-ready t)))
   (add-hook 'after-init-hook (lambda () (set-frame-parameter nil 'frame-ready t)))

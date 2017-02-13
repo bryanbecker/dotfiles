@@ -83,7 +83,7 @@ plugins=( \
          colored-man-pages \
          cp \         # adds cpv alias that uses rsync
          dirhistory \ # navigate file history with ALT-LEFT and ALT-RIGHT
-         emacs \      # emacs start-up functions
+         # emacs \      # emacs start-up functions
          fasd \       # fasd support
          git \        # adds a ton of git aliases
          gitignore \  # adds `gi` alias
